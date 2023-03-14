@@ -15,8 +15,8 @@ if (isGithubActions) {
 repo = 'docs'
 
 const nextConfig = {
-  assetPrefix: `/${repo}/`,
-  basePath: `/${repo}`,
+  //assetPrefix: `/${repo}/`,
+  //basePath: `/${repo}`,
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md'],
   images: {
