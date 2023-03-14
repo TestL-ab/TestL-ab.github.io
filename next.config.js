@@ -12,7 +12,7 @@ if (isGithubActions) {
   repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
 }
 
-//repo = 'docs'
+repo = 'docs'
 
 const nextConfig = {
   assetPrefix: `/${repo}/`,
