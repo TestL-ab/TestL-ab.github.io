@@ -26,12 +26,12 @@ const navigation = [
   //   ],
   // },
   {
-    title: 'A/B Testing Overview',
+    title: 'A/B Testing',
     links: [
       { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
       {
         title: 'A/B Testing Overview',
-        href: '/docs/what-is-a-b-testing',
+        href: '/docs/ab-testing-overview',
       },
       // {
       //   title: 'Use Cases for A/B Testing',
@@ -52,7 +52,7 @@ const navigation = [
     ],
   },
   {
-    title: 'TestLab Architecture',
+    title: 'Test Lab Architecture',
     links: [
       { title: 'Architecture Overview', href: '/docs/architecture' },
       { title: 'Admin UI', href: '/docs/admin-ui' },
@@ -64,24 +64,27 @@ const navigation = [
   {
     title: 'Engineering Decisions',
     links: [
-      { title: 'Architectural Decisions', href: '/docs/architecture' },
+      {
+        title: 'Architectural Decisions',
+        href: '/docs/decisions',
+      },
       // { title: 'Self-Hosting', href: '/docs/architecture' },
       // { title: 'Database Type', href: '/docs/admin-ui' },
-      { title: 'Functional Decisions', href: '/docs/architecture' },
+      { title: 'Functional Decisions', href: '/docs/functional-decisions' },
       // { title: 'User "Stickiness"', href: '/docs/backend-server' },
       // { title: 'One Experiment per User', href: '/docs/database' },
       // { title: 'User-block Granularity', href: '/docs/sdk' },
       // { title: 'Retrieving Updated Data', href: '/docs/sdk' },
       // { title: 'Statistical Analysis', href: '/docs/sdk' },
-      { title: 'Testing Suite', href: '/docs/sdk' },
-      { title: 'Future Work', href: '/docs/sdk' },
+      { title: 'Testing Suite', href: '/docs/testing' },
+      { title: 'Future Work', href: '/docs/future' },
     ],
   },
   {
     title: 'Documentation',
     links: [
-      { title: 'API Reference', href: '/docs/feature-route' },
-      { title: 'SDK Reference', href: '/docs/users-route' },
+      { title: 'API Reference', href: '/docs/api-docs' },
+      { title: 'SDK Reference', href: '/docs/sdk-docs' },
       // { title: '/api/userblocks', href: '/docs/userblocks-route' },
       // { title: '/api/events', href: '/docs/events-route' },
     ],
