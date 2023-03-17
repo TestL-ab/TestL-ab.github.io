@@ -10,7 +10,7 @@ Learn more about TestLab and how it can help you make better design decisions to
 
 {% quick-link title="Installation" icon="installation" href="/docs/installation" description="Step-by-step guide to setting up our self-hosted platform on your local host, virtual private server, or AWS Elastic Container Service." /%}
 
-{% quick-link title="Architecture guide" icon="presets" href="/docs/creating-features" description="Learn about the key features of TestLab" /%}
+{% quick-link title="Architecture guide" icon="presets" href="/docs/architecture" description="Learn about the key features of TestLab" /%}
 
 {% quick-link title="SDKs" icon="plugins" href="/docs/sdk-docs" description="Use our native JavaScript, React, Ruby, or Python SDKs." /%}
 
