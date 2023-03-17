@@ -1,5 +1,5 @@
 ---
-title: Testing Suite
+title: Test Suite
 description: An overview of Test Lab's backend testing suite.
 ---
 

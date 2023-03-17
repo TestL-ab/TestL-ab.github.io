@@ -1,9 +1,7 @@
 ---
 title: What is A/B testing?
-description: Experimentation drives decision-making that affects user experience.
+description: Overview of A/B testing, use cases for A/B testing, and challenges related to A/B testing.
 ---
-
-Experimentation drives decision-making that affects user experience.
 
 ---
 
@@ -38,6 +36,8 @@ By enabling users to interact with both versions and using data analysis to comp
 proposed goal, the design team can make an informed decision as to whether to roll out the change to the
 whole user base.
 
+---
+
 ## Use Cases for A/B Testing
 
 Use cases for A/B testing can include design changes, feature experimentation, hardware/backend changes, and testing of APIs and other third-party services.
@@ -58,9 +58,11 @@ With the nearly unlimited selection of possible system design decisions and opti
 
 It is often efficient and economical to rely on APIs and third-party services for portions of an application. For each desired component, there may be many different options with distinct features, computational and financial costs, and user interfaces. As an example, there may be a significant difference in conversion rates if you allow users to utilize PayPal for their purchases as opposed to only credit cards. There are trade-offs in terms of the cost of using these services, but the increased conversion rate may outweigh the increased cost. Testing these changes prior to implementation allows for a clear understanding of the risks and rewards.
 
+---
+
 ## Challenges of A/B Testing
 
-### Engineering Challenges
+### Implementation Challenges
 
 One challenge of A/B testing is ensuring that the appropriate features are shown to a given user and that the user continues to be exposed to that experience over time. In most cases, simply randomizing each request to one of many potential experiences will just not cut it. The approach for ensuring the “stickiness” of the experience can vary depending on whether you’re rolling out a new feature to a small subset of users or trying to conduct an experiment to determine which of several variants results in the highest level of user engagement.
 
@@ -72,8 +74,9 @@ In addition to engineering challenges, there are also a number of statistical ch
 
 First, A/B testing can be less helpful for sites with low traffic. If you are testing a large number of variants or the effect of each variant on user behavior is small, then it could take an extended period of time to generate enough data to see a statistically significant impact.
 
-![Alt Text](/images/PowerCurve.png)
-_Caption: Nomogram for sample size and power, for comparing two groups of equal size. In the above example, for effect size = 1, power = 0.8 and alpha value = 0.05, the sample size is found to be 30. [Source: Biochem Med](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7745163/)_
+In addition, if a user is presented with multiple variations at the same time, it can be extremely challenging to determine which specific variant or aspect of the experience was really influencing user behavior. As you will see in the subsequent discussion on Functional Decisions related to Test Lab, this was critical in our decision to limit users to enrollment in a single experiment at a time.
+
+---
 
 ## Implementing A/B Testing
 

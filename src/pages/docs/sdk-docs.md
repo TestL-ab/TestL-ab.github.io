@@ -1,9 +1,9 @@
 ---
-title: SDK Reference
-description: Reference for Test Lab SDKs
+title: SDK Documentation
+description: Documentation for Test Lab SDKs
 ---
 
-Test Lab offers SDKs for Node, React, Ruby, and Python applications.
+Test Lab offers SDKs for Node, React, Ruby, and Python applications. Test Lab also offers the opportunity to send event data from experiments to the Test Lab database for storage and analysis.
 
 ---
 

@@ -13,6 +13,8 @@ A/B testing platforms are generally fully managed and hosted by a third party or
 
 All of these elements are especially important for Test Lab’s core use case, which includes applications that may not be large enough to benefit from a fully-managed A/B testing solution.
 
+---
+
 ## Database Type
 
 An early design decision was which type of database to use to store the Test Lab feature configurations, users, and event data. We considered using a SQL database, a noSQL database like MongoDB, or even a time series database specifically for the event data.

@@ -13,11 +13,13 @@ Throughout the Test Lab design process, the goal was flexibility. In the interes
 
 If the developer wants this randomly generated UUID to be used to evaluate the feature(s) for the request, then the default context can be used. Otherwise, the developer has the opportunity to update the `context` using the `update_context` method, passing a new value to the `user_id` and/or `ip` properties. The value that assigned to the `user_id` is then used to evaluate the feature. Since the assignment logic is deterministic, every time a feature is evaluated with a particular `user_id`, it will return the same value. So the value chosen for the `user_id` will determine what the feature “sticks” to in the application.
 
-## Ensuring that users experience no more than one experiment
+---
+
+## Limiting users to one concurrent experiment
 
 At its core, Test Lab is an experimentation platform, and the team wanted to ensure that data would not be compromised by running concurrent experiments on a single user. For example, if a user were exposed to one variant of Experiment A and another variant of Experiment B, then how would be be able to determine if a user’s behavior was due to exposure to Experiment A, Experiment B, or some combination of the two?
 
-### Multivariate analysis
+### One approach: multivariate analysis
 
 One answer to this question is multivariate analysis. To perform multivariate analysis in an A/B testing platform, you would first need to identify the different variables being tested and the possible combinations of these variables. For example, if a website is being tested with two different layouts and three different headlines, there are six possible combinations to test.
 
@@ -38,7 +40,9 @@ Instead, we decided on an approach that would ensure that a user was exposed to 
 
 Next, when the SDK polls the Test Lab backend server for feature configuration, the backend server provides a list of user-blocks indicating which “blocks” of users are allocated to each experiment. This list is updated over time to account for experiments that have completed (freeing up blocks of allocated users) and new experiments that are starting up and being assigned to new blocks of allocated users. The key is that **once a block of users has been allocated to an experiment, it remains allocated to that experiment until the experiment has completed**.
 
-### Granularity of user-blocks
+---
+
+## Granularity of user-blocks
 
 As described in the last section, the current implementation of Test Lab allows users to be assigned to no more than one experiment at a time. In other words, no more than 100% of the user-base can be allocated to experiments at any point in time. One decision we made was to allocate users to experiments in 5% blocks.
 
@@ -48,7 +52,9 @@ The use case for Test Lab is **smaller applications that are just getting starte
 
 Therefore, as a starting point, we decided that 5% was a reasonable minimum of the user-base to enroll in an experiment. This still allows for up to 20 concurrent experiments, which seems more than sufficient for a typical Test Lab user. If we were to find that users were expecting higher-than-expected traffic that could support even more concurrent experiments, then we could certainly update our logic to allow for more granular user-blocks.
 
-### Polling to retrieve updated feature data
+---
+
+## Polling to retrieve updated feature data
 
 The Test Lab team considered a number of options for ensuring that the in-memory representation of the feature configuration created by the SDK remains up to date as features change over time. Some options that were considered were websockets, server-sent events (SSEs), and polling.
 
@@ -59,6 +65,14 @@ Ultimately, the Test Lab team opted to use polling for several key reasons:
 1. Simplicity: Polling is a simple approach to fetching data from a server. It involves making periodic requests to the server at a predefined interval to check for updates. This makes it a good option for smaller applications that don't require real-time updates and don't need the additional complexity of websockets or SSE.
 2. Compatibility: Polling is widely supported by all modern browsers and doesn't require any additional server-side infrastructure or configuration, making it a good choice when compatibility is a concern.
 3. Resource efficiency: Polling can be more resource-efficient than websockets or SSE in situations where the amount of data being transmitted is relatively small or infrequent. This is because websockets and SSE maintain a persistent connection, which can consume more resources on both the client and server. **The Test Lab server only responds with new data when the feature configuration has changed,** which makes polling an efficient choice.
-4. Control: With polling, the client has more control over the frequency of requests and can adjust the polling interval to suit its needs. This can be useful in situations where the rate of updates is variable or unpredictable. In the interest of flexibility, Test Lab offers control of the polling interval to the client application.
+4. Control: With polling, the client has more control over the frequency of requests and can adjust the polling interval to suit its needs. This can be useful in situations where the rate of updates is variable or unpredictable. In the interest of f
+
+---
 
 ## Statistical analysis
+
+### Coming Soon
+
+{% callout type="warning" title="Work in Progress!" %}
+A demo is in the works and coming soon!
+{% /callout %}

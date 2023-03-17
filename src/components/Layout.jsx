@@ -76,19 +76,28 @@ const navigation = [
       // { title: 'User-block Granularity', href: '/docs/sdk' },
       // { title: 'Retrieving Updated Data', href: '/docs/sdk' },
       // { title: 'Statistical Analysis', href: '/docs/sdk' },
-      { title: 'Testing Suite', href: '/docs/testing' },
+      { title: 'Test Suite', href: '/docs/testing' },
       { title: 'Future Work', href: '/docs/future' },
     ],
   },
   {
     title: 'Documentation',
     links: [
-      { title: 'API Reference', href: '/docs/api-docs' },
-      { title: 'SDK Reference', href: '/docs/sdk-docs' },
+      { title: 'API Documentation', href: '/docs/api-docs' },
+      { title: 'SDK Documentation', href: '/docs/sdk-docs' },
+      { title: 'References', href: '/docs/references' },
       // { title: '/api/userblocks', href: '/docs/userblocks-route' },
       // { title: '/api/events', href: '/docs/events-route' },
     ],
   },
+  // {
+  //   title: 'Additional Resources',
+  //   links: [
+  //     { title: 'References', href: '/docs/references' },
+  //     // { title: '/api/userblocks', href: '/docs/userblocks-route' },
+  //     // { title: '/api/events', href: '/docs/events-route' },
+  //   ],
+  // },
 
   // {
   //   title: 'API reference',

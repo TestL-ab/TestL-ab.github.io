@@ -15,6 +15,8 @@ The Admin UI is used to create, edit, delete, and view current, upcoming, and pa
 A demo is in the works and coming soon!
 {% /callout %}
 
+---
+
 ## Editing Current, Upcoming, or Past Features
 
 ### Coming Soon
@@ -23,6 +25,8 @@ A demo is in the works and coming soon!
 A demo is in the works and coming soon!
 {% /callout %}
 
+---
+
 ## Viewing Experiment Details
 
 ### Coming Soon
@@ -30,6 +34,8 @@ A demo is in the works and coming soon!
 {% callout type="warning" title="Work in Progress!" %}
 A demo is in the works and coming soon!
 {% /callout %}
+
+---
 
 ## Experiment Data Visualizer
 

@@ -19,6 +19,8 @@ In order to evaluate a feature, the SDK considers several attributes of a featur
 4. If the feature is an experiment, is the experiment active for this particular user?
 5. If the experiment is active for this user, to which variant should the user be exposed?
 
+---
+
 ## Toggle and rollout evaluation
 
 When evaluating whether a feature toggle is active for a particular user, the SDK checks whether the current date is within the start and end date for a particular toggle and whether the toggle is current active (i.e., not paused). If both of these are true, then the SDK returns `true` for this feature.
@@ -31,7 +33,7 @@ In other words, for a rollout percentage of 10%, the rollout would return `true`
 
 ### Why hash the concatenated string of the user_id and the feature name instead of just hashing the user_id, which is already a unique string?
 
-We made the choice to hash the concatenated string because, in contrast to the experiment described below, there is no constraint on the number of feature toggles that a user can be exposed to. However, we do want to make sure that users are uniformly distributed amongst active feature toggles.
+We made the choice to hash the concatenated string because, in contrast to the experiment feature type described below, there is no constraint on the number of feature toggles that a user can be exposed to. However, we do want to make sure that users are uniformly distributed amongst active feature toggles.
 
 Let’s suppose that we have three active feature toggles:
 
@@ -42,6 +44,8 @@ Let’s suppose that we have three active feature toggles:
 Let’s also suppose that we have a `user_id` that hashes to a value of 0.06. If we just used this value to determine toggle activity, all three toggles would be active for this user, as 0.06 is less than 0.10, 0.20, and 0.30! In contrast, a user with a `user_id` that hashes to a value of 0.35 would have no active toggles.
 
 By hashing the `user_id` concatenated to the feature `name` we ensure that the hashed value for an individual user is different for each toggle, resulting in a more uniform distribution of feature toggles across the user base.
+
+---
 
 ## Experiment evaluation
 
@@ -61,13 +65,15 @@ Overall, the process that a Test Lab SDK uses to determine the value of an exper
 
 ![Alt Text](/images/experimentFlow.png)
 
-Variants that are returned by the Test Lab SDK include both a value and an id property. The value property is used by the developer to render the correct version of the feature for a user, and the id property is used (in conjunction with the user_id) to send event data to the Test Lab backend server for collection, analysis, and visualization in the Admin UI.
+Variants that are returned by the Test Lab SDK include both a `value` and an `id` property. The `value` property is used by the developer to render the correct version of the feature for a user, and the `id` property is used (in conjunction with the `user_id`) to send event data to the Test Lab backend server for collection, analysis, and visualization in the Admin UI.
+
+---
 
 ## How SDKs receive updated feature data
 
 Test Lab relies on SDKs fetching features in the background using polling at regular intervals. In a thread-based environment, this needs to be done in a separate thread. The Test Lab recommendation is to use a poll interval of **15 seconds**, but this depends upon how often feature updates are made, and the interval is configurable in the SDK.
 
-The first time that the SDK client fetches feature configurations, it makes a request to the Test Lab backend server, the server reaches out to the database to retrieve the current feature and user-block configuration, and the features are returned to the SDK client with a `200 OK` status.
+The first time that the SDK client fetches feature configurations, it makes a request to the Test Lab backend server, the server reaches out to the database to retrieve the current feature and user-block configuration, and the current configurations are returned to the SDK client with a `200 OK` status.
 
 Once the initial fetch is complete, the SDK client sends subsequent requests at the specified intervals with a `If-Modified-Since` header. The Test Lab backend server keeps track of the last time feature data was modified, and it simply returns a `304 Not Modified` status if no changes have been made since the last request. If changes have been made, then the updated feature configuration data is returned, and the in-memory representation of the feature configuration is updated by the SDK.
 

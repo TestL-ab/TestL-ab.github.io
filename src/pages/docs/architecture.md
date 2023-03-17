@@ -7,7 +7,7 @@ Test Lab is loosely modeled on the Unleash A/B testing platform, offering users 
 
 ---
 
-## Architecture Overview
+## Components of Test Lab Architecture
 
 The Test Lab A/B Testing and Feature Flagging Platform consists of four key components:
 

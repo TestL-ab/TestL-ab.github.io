@@ -9,8 +9,6 @@ Existing solutions for A/B testing run the gamut from bare-bones apps exposing A
 
 Options for A/B testing in the “middle-of-the-road” (i.e., solutions that are open source with self-hosting options) are relatively sparse – applications that look promising either fade away and have little to no development or engagement over time or they become fully-featured enterprise options that offer only expensive, managed solutions (e.g., LaunchDarkly, Optimizely).
 
-Within the limited, self-hosted category, two key options are Unleash and GrowthBook, both of which offer rich documentation and API access, with open-source deployment options.
-
 |           Feature            | Firebase |  VWO   | GrowthBook |   Unleash    |      LaunchDarkly      |
 | :--------------------------: | :------: | :----: | :--------: | :----------: | :--------------------: |
 |      Self-Hosted Option      |   None   |  None  |   Docker   | Docker, Node |          None          |
@@ -25,3 +23,5 @@ Within the limited, self-hosted category, two key options are Unleash and Growth
 |    GUI for Test Creating     |   Yes    |  Yes   |    Yes     |     Yes      | Pro or Enterprise Plan |
 |  GUI for Data Visualization  |   Yes    |  Yes   |    Yes     |      No      | Pro or Enterprise Plan |
 |         Open-Source          |    No    |   No   |    Yes     |     Yes      |           No           |
+
+Within the limited, self-hosted category, two key options are Unleash and GrowthBook, both of which offer rich documentation and API access, with open-source deployment options. These solutions inspired some of the features and functionality of Test Lab.
