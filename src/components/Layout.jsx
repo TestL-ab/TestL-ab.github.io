@@ -17,34 +17,34 @@ import MyLogo from '@/images/transparent_logo_darker.png'
 import MyLogomark from '@/images/logo_icon_transparent.png'
 
 const navigation = [
-  {
-    title: 'Introduction',
-    links: [
-      { title: 'Getting started', href: '/' },
-      { title: 'Installation', href: '/docs/installation' },
-      { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
-    ],
-  },
+  // {
+  //   title: 'Introduction',
+  //   links: [
+  //     { title: 'Getting started', href: '/' },
+  //     { title: 'Installation', href: '/docs/installation' },
+  //     { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
+  //   ],
+  // },
   {
     title: 'A/B Testing Overview',
     links: [
-      { title: 'Introduction', href: '/docs/introduction' },
+      { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
       {
-        title: 'What is A/B Testing?',
+        title: 'A/B Testing Overview',
         href: '/docs/what-is-a-b-testing',
       },
-      {
-        title: 'Use Cases for A/B Testing',
-        href: '/docs/use-cases',
-      },
-      {
-        title: 'Challenges of A/B Testing',
-        href: '/docs/challenges',
-      },
-      {
-        title: 'Implementing A/B Testing',
-        href: '/docs/implementing-ab-testing',
-      },
+      // {
+      //   title: 'Use Cases for A/B Testing',
+      //   href: '/docs/use-cases',
+      // },
+      // {
+      //   title: 'Challenges of A/B Testing',
+      //   href: '/docs/challenges',
+      // },
+      // {
+      //   title: 'Implementing A/B Testing',
+      //   href: '/docs/implementing-ab-testing',
+      // },
       {
         title: 'Existing Solutions',
         href: '/docs/existing-solutions',
@@ -64,36 +64,47 @@ const navigation = [
   {
     title: 'Engineering Decisions',
     links: [
-      { title: 'Self-Hosting', href: '/docs/architecture' },
-      { title: 'Database Type', href: '/docs/admin-ui' },
-      { title: 'User "Stickiness"', href: '/docs/backend-server' },
-      { title: 'One Experiment per User', href: '/docs/database' },
-      { title: 'User-block Granularity', href: '/docs/sdk' },
-      { title: 'Retrieving Updated Data', href: '/docs/sdk' },
-      { title: 'Statistical Analysis', href: '/docs/sdk' },
+      { title: 'Architectural Decisions', href: '/docs/architecture' },
+      // { title: 'Self-Hosting', href: '/docs/architecture' },
+      // { title: 'Database Type', href: '/docs/admin-ui' },
+      { title: 'Functional Decisions', href: '/docs/architecture' },
+      // { title: 'User "Stickiness"', href: '/docs/backend-server' },
+      // { title: 'One Experiment per User', href: '/docs/database' },
+      // { title: 'User-block Granularity', href: '/docs/sdk' },
+      // { title: 'Retrieving Updated Data', href: '/docs/sdk' },
+      // { title: 'Statistical Analysis', href: '/docs/sdk' },
       { title: 'Testing Suite', href: '/docs/sdk' },
       { title: 'Future Work', href: '/docs/sdk' },
     ],
   },
+  {
+    title: 'Documentation',
+    links: [
+      { title: 'API Reference', href: '/docs/feature-route' },
+      { title: 'SDK Reference', href: '/docs/users-route' },
+      // { title: '/api/userblocks', href: '/docs/userblocks-route' },
+      // { title: '/api/events', href: '/docs/events-route' },
+    ],
+  },
 
-  {
-    title: 'API reference',
-    links: [
-      { title: '/api/feature', href: '/docs/feature-route' },
-      { title: '/api/users', href: '/docs/users-route' },
-      { title: '/api/userblocks', href: '/docs/userblocks-route' },
-      { title: '/api/events', href: '/docs/events-route' },
-    ],
-  },
-  {
-    title: 'SDK Reference',
-    links: [
-      { title: 'Node SDK', href: '/docs/node-SDK' },
-      { title: 'React SDK', href: '/docs/react-SDK' },
-      { title: 'Ruby SDK', href: '/docs/ruby-SDK' },
-      { title: 'Python SDK', href: '/docs/python-SDK' },
-    ],
-  },
+  // {
+  //   title: 'API reference',
+  //   links: [
+  //     { title: '/api/feature', href: '/docs/feature-route' },
+  //     { title: '/api/users', href: '/docs/users-route' },
+  //     { title: '/api/userblocks', href: '/docs/userblocks-route' },
+  //     { title: '/api/events', href: '/docs/events-route' },
+  //   ],
+  // },
+  // {
+  //   title: 'SDK Reference',
+  //   links: [
+  //     { title: 'Node SDK', href: '/docs/node-SDK' },
+  //     { title: 'React SDK', href: '/docs/react-SDK' },
+  //     { title: 'Ruby SDK', href: '/docs/ruby-SDK' },
+  //     { title: 'Python SDK', href: '/docs/python-SDK' },
+  //   ],
+  // },
 ]
 
 function GitHubIcon(props) {
