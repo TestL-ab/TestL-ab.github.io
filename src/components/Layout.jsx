@@ -22,6 +22,7 @@ const navigation = [
     links: [
       { title: 'Getting started', href: '/' },
       { title: 'Installation', href: '/docs/installation' },
+      { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
     ],
   },
   {
@@ -36,14 +37,42 @@ const navigation = [
         title: 'Use Cases for A/B Testing',
         href: '/docs/use-cases',
       },
+      {
+        title: 'Challenges of A/B Testing',
+        href: '/docs/challenges',
+      },
+      {
+        title: 'Implementing A/B Testing',
+        href: '/docs/implementing-ab-testing',
+      },
+      {
+        title: 'Existing Solutions',
+        href: '/docs/existing-solutions',
+      },
     ],
   },
   {
     title: 'TestLab Architecture',
     links: [
-      { title: 'Creating Features', href: '/docs/creating-features' },
-      { title: 'Evaluating Features', href: '/docs/evaluating-features' },
-      { title: 'Data Visualization', href: '/docs/data-visualization' },
+      { title: 'Architecture Overview', href: '/docs/architecture' },
+      { title: 'Admin UI', href: '/docs/admin-ui' },
+      { title: 'Backend Server', href: '/docs/backend-server' },
+      { title: 'Database', href: '/docs/database' },
+      { title: 'SDK', href: '/docs/sdk' },
+    ],
+  },
+  {
+    title: 'Engineering Decisions',
+    links: [
+      { title: 'Self-Hosting', href: '/docs/architecture' },
+      { title: 'Database Type', href: '/docs/admin-ui' },
+      { title: 'User "Stickiness"', href: '/docs/backend-server' },
+      { title: 'One Experiment per User', href: '/docs/database' },
+      { title: 'User-block Granularity', href: '/docs/sdk' },
+      { title: 'Retrieving Updated Data', href: '/docs/sdk' },
+      { title: 'Statistical Analysis', href: '/docs/sdk' },
+      { title: 'Testing Suite', href: '/docs/sdk' },
+      { title: 'Future Work', href: '/docs/sdk' },
     ],
   },
 
