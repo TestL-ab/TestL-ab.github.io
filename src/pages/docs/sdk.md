@@ -3,9 +3,13 @@ title: SDK
 description: A walkthrough of Test Lab's SDKs and the functionality they provide.
 ---
 
-Test Lab provides native SDKs for **Node**, **React**, **Ruby / Sinatra**, and **Python / Flask**. Instructions for using the SDKs can be found in the **docs**.
+Test Lab provides native SDKs for [Node](/docs/sdk-docs#node-sdk), [React](/docs/sdk-docs#react-sdk), [Ruby / Sinatra](/docs/sdk-docs#ruby-sdk), and [Python / Flask](/docs/sdk-docs#python-sdk). Instructions for using the SDKs can be found in the [SDK documentation](/docs/sdk-docs).
 
-The SDK stores an _in-memory representation_ of the current configuration of features that could be available for a particular user. Because the SDK client caches all features and their current configuration in memory, it is very efficient to determine the value of a feature, as it is a function operating on a local state without the need to retrieve data from a database. When provided with a unique string to identify a user (stored as a `user_id`), the SDK client can determine the value of each feature for that user deterministically without making any additional API calls to the Test Lab backend server.
+## What does the SDK do?
+
+The SDK stores an _in-memory representation_ of the current configuration of features that could be available for a particular user. Because the SDK client caches all features and their current configuration in memory, it is very efficient to determine the value of a feature, as it is a function operating on a local state without the need to retrieve data from a database.
+
+When provided with a unique string to identify a user (stored as a `user_id`), the SDK client can determine the value of each feature for that user deterministically without making any additional API calls to the Test Lab backend server.
 
 ---
 
@@ -50,6 +54,8 @@ By hashing the `user_id` concatenated to the feature `name` we ensure that the h
 ## Experiment evaluation
 
 When evaluating the value of an experiment feature, the Test Lab SDK starts with the standard checks of whether or not the feature is active and whether we are within the prescribed start and end dates of the experiment. If both are true, then the SDK uses the hashing function to hash the `user_id` to a value between 0 and 1. A user can be assigned to only one experiment at a time, so we do not need to worry about the overlapping issue addressed in the feature toggle discussion above.
+
+### User-blocks
 
 Our solution for ensuring that users are assigned to no more than one experiment relies on **user-blocks**. When a new experiment is created, the Test Lab backend server works with the Admin UI to ensure that no more than 100% of users are assigned to be in a concurrent experiment. Test Lab allocates “blocks” of users in 5% increments. Once a **user-block** is assigned to a particular experiment, it remains assigned to that experiment through its conclusion. After the experiment completes, that **user-block** segment is available for another experiment. The key is that **once a user-block is assigned to a particular experiment, it is occupied for the duration of that experiment**.
 

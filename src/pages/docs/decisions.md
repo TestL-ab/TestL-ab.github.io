@@ -3,7 +3,7 @@ title: Architectural Decisions
 description: Key decisions made when designing the Test Lab architecture.
 ---
 
-## Hosted versus Self-Hosted
+## Managed versus Self-Hosted
 
 A/B testing platforms are generally fully managed and hosted by a third party or self-hosted on a private server. The Test Lab team opted to provide an open-source, self-hosted solution, which offers the opportunity for customization, complete control over data, and a lower cost.
 

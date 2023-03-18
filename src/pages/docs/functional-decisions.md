@@ -3,15 +3,15 @@ title: Functional Decisions
 description: Key decisions made when developing the Test Lab functionality.
 ---
 
-## "Stickiness of the user experience"
+## "Stickiness" of the user experience
 
 Most A/B testing platforms incorporate some form of “stickiness” into the logic that assigns a particular user or request to a particular feature or experience. This ensures that a particular user continues to experience the same variant across multiple requests. But what you want to “stick” to may depend on the type of application and the type of feature that you’re testing.
 
 Some applications may want every request to be treated as a new user that could be offered a new experience. Some applications may want all requests associated with a particular session to be treated as the same user and offered the same feature or experience. And others may want to use other characteristics such as an email address or other unique characteristic to determine which feature a user is offered.
 
-Throughout the Test Lab design process, the goal was flexibility. In the interest of flexibility, we introduce the `user_id` as part of the SDK client’s `context` to allow the developer to specify what they want to use to assign a particular experience to a user. As part of the client instantiation process, a default `context` is assigned, which includes a unique UUID assigned to the `user_id` property and the IP address of the incoming request to the `ip` property of the `context`.
+Throughout the Test Lab design process, the goal was **flexibility**. In the interest of flexibility, we introduce the `user_id` as part of the [SDK](/docs/sdk-docs) client’s `context` to allow the developer to specify what they want to use to assign a particular experience to a user. As part of the client instantiation process, a default `context` is assigned, which includes a unique UUID assigned to the `user_id` property and the IP address of the incoming request assigned to the `ip` property of the `context`.
 
-If the developer wants this randomly generated UUID to be used to evaluate the feature(s) for the request, then the default context can be used. Otherwise, the developer has the opportunity to update the `context` using the `update_context` method, passing a new value to the `user_id` and/or `ip` properties. The value that assigned to the `user_id` is then used to evaluate the feature. Since the assignment logic is deterministic, every time a feature is evaluated with a particular `user_id`, it will return the same value. So the value chosen for the `user_id` will determine what the feature “sticks” to in the application.
+If the developer wants this randomly generated UUID to be used to evaluate the feature(s) for the request, then the default context can be used. Otherwise, the developer has the opportunity to update the `context` using the `update_context` method, passing a new value to the `user_id` and/or `ip` properties. The value that is assigned to the `user_id` is then used to evaluate the feature. Since the assignment logic is deterministic, every time a feature is evaluated with a particular `user_id`, it will return the same value. So the value chosen for the `user_id` will determine what the feature “sticks” to in the application.
 
 ---
 
@@ -34,7 +34,7 @@ While multivariate analysis can be a powerful tool for determining the individua
 
 In short, **while multivariate analysis is a perfectly reasonable approach for applications with very large user bases that provide sufficient power to tease out multivariate effects, it is less likely to be a good fit for a platform like Test Lab** that is tailored to meet the needs of applications with a more modest user base.
 
-### Test Lab approach: user-blocks
+### Test Lab approach: [user-blocks](/docs/sdk#user-blocks)
 
 Instead, we decided on an approach that would ensure that a user was exposed to only one experiment at a time. This starts with the Admin UI, where our user interface ensures that a maximum of 100% of users can be participating in experiments at any given point in time.
 

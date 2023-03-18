@@ -287,7 +287,7 @@ Response body (error):
 ```
 
 Notes:
-Current features are features where the current date is between the `start_date` and `end_date` of the feature. This route returns an object with lists of current toggles, rollouts, and experiments. It also updates and returns a list of the [user-blocks.](/docs/sdk#experiment-evaluation)
+Current features are features where the current date is between the `start_date` and `end_date` of the feature. This route returns an object with lists of current toggles, rollouts, and experiments. It also updates and returns a list of the [user-blocks.](/docs/sdk#user-blocks)
 
 ### Get a Feature by ID
 
