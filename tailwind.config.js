@@ -32,6 +32,18 @@ module.exports = {
       maxWidth: {
         '8xl': '88rem',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar')],
