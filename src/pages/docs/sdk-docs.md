@@ -5,9 +5,15 @@ description: Documentation for Test Lab SDKs
 
 Test Lab offers SDKs for Node, React, Ruby, and Python applications. Test Lab also offers the opportunity to send event data from experiments to the Test Lab database for storage and analysis.
 
+- [Node SDK](#node-sdk)
+- [React SDK](#react-sdk)
+- [Ruby SDK](#ruby-sdk)
+- [Python SDK](#python-sdk)
+- [Event Tracking](#event-tracking)
+
 ---
 
-# Node SDK
+## Node SDK
 
 Use **`npm install testlab-sdk-node`** to install the SDK for use in your application.
 
@@ -43,7 +49,7 @@ let variant = testLabClient.getFeatureValue('name_of_experiment')
 
 ---
 
-# React SDK
+## React SDK
 
 Use **`npm install testlab-sdk-react`** to install the SDK for use in your application.
 
@@ -94,11 +100,7 @@ let feature = sdkClient.getFeatureValue('name_of_experiment')
 
 ---
 
-# Ruby SDK
-
-The Ruby SDK is used to create the TestLab Client for use in Ruby / Sinatra / Rails applications.
-
----
+## Ruby SDK
 
 Install using `gem install testlab_sdk_ruby` and include **`testlab_sdk_ruby`** in your application's **`Gemfile`**.
 
@@ -139,7 +141,7 @@ When you need to determine whether a feature is enabled for a particular user (a
 
 ---
 
-# Python SDK
+## Python SDK
 
 Install the SDK for use in your application by using using `python3 -m pip install testlab_sdk_python`.
 
@@ -188,7 +190,7 @@ return render_template('home.html', value=color)
 
 ---
 
-# Event Tracking
+## Event Tracking
 
 Note that a user will need to make a `post` call with event information (user_id and variant_id) whenever an event occurs that they want to record in the experiment.
 

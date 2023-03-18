@@ -24,6 +24,7 @@ module.exports = {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
+
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -32,6 +33,7 @@ module.exports = {
       maxWidth: {
         '8xl': '88rem',
       },
+
       typography: {
         DEFAULT: {
           css: {
@@ -41,6 +43,7 @@ module.exports = {
             'code::after': {
               content: '""',
             },
+            code: { color: '#0ea5e9' },
           },
         },
       },
