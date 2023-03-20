@@ -4,10 +4,16 @@ import Link from 'next/link'
 import Router from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 
+// const docSearchConfig = {
+//   appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
+//   apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY,
+//   indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME,
+// }
+
 const docSearchConfig = {
-  appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
-  apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY,
-  indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME,
+  appId: '2JPVUDMBXU',
+  apiKey: '09a2af8a725d9380ed98613c12ebd2fe',
+  indexName: 'testl-abio',
 }
 
 function Hit({ hit, children }) {
