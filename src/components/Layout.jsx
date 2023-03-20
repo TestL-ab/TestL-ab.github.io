@@ -51,6 +51,10 @@ const navigation = [
       //   href: '/docs/implementing-ab-testing',
       // },
       {
+        title: 'Challenges of A/B Testing',
+        href: '/docs/challenges',
+      },
+      {
         title: 'Existing Solutions',
         href: '/docs/existing-solutions',
       },
@@ -289,7 +293,7 @@ export function Layout({ children, title, tableOfContents }) {
             {previousPage && (
               <div>
                 <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
-                  Previous
+                  <a href={previousPage.href}>Previous</a>
                 </dt>
                 <dd className="mt-1">
                   <Link
@@ -304,7 +308,7 @@ export function Layout({ children, title, tableOfContents }) {
             {nextPage && (
               <div className="ml-auto text-right">
                 <dt className="font-display text-sm font-medium text-slate-900 dark:text-white">
-                  Next
+                  <a href={nextPage.href}>Next</a>
                 </dt>
                 <dd className="mt-1">
                   <Link

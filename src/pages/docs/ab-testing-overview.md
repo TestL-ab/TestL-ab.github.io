@@ -1,19 +1,10 @@
----
-title: What is A/B testing?
-description: Overview of A/B testing, use cases for A/B testing, and challenges related to A/B testing.
----
-
----
-
 ## Small changes can have a big impact
 
 In established applications, even the smallest changes can have a significant impact that may not be predictable or obvious to the development team. In some cases, it’s best left to the end user to truly decide which modifications to make to the application. Presenting an application change to a “test” audience of users and observing their behavior can add empirical data to the process of making improvements to increase conversion rates or alter desired user behavior.
 
 Google famously tested over 40 different shades of
-blue for ad links, resulting in a final color choice that added nearly $200M in revenue.
-A/B testing allows the development team to make informed decisions based on quantitative data points and
-analytics. These decisions can increase desired user behavior and may help identify more efficient or cost-effective solutions. A/B testing prior to rollout also reduces the risk of making a detrimental design choice
-based on perceived aesthetic preference rather than actual user behavior.
+blue for ad links, resulting in a final color choice that added nearly $200M in revenue. A/B testing allows the development team to make informed decisions based on quantitative data points and
+analytics. These decisions can increase desired user behavior and may help identify more efficient or cost-effective solutions. A/B testing prior to rollout also reduces the risk of making a detrimental design choice based on perceived aesthetic preference rather than actual user behavior.
 
 ## Hypotheses, experiments, and results
 
@@ -26,11 +17,7 @@ percentage to the control.
 
 ![Alt Text](/images/ab_testing_overview.png)
 
-Once users are assigned to a test variant, data analytics can be gathered and compiled from users in each
-group. The user behavior from each version is compared to determine whether the hypothesis was accurate.
-By enabling users to interact with both versions and using data analysis to compare their responses with the
-proposed goal, the design team can make an informed decision as to whether to roll out the change to the
-whole user base.
+Once users are assigned to a test variant, data analytics can be gathered and compiled from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling users to interact with both versions and using data analysis to compare their responses with the proposed goal, the design team can make an informed decision as to whether to roll out the change to the whole user base.
 
 ---
 
@@ -48,29 +35,11 @@ Larger changes, such as adding additional functionality like a search bar or a �
 
 ### Hardware / Backend Changes
 
-With the nearly unlimited selection of possible system design decisions and options for processing and storing data, A/B testing may help increase desired user behavior or decrease cost structure. For example, the slightly increased latency of a downgraded server or alternate service may not be as detrimental to user conversion as the design team anticipates. For other apps it may be best to upgrade to the most performant architecture the company can afford to maximize potential user conversions – a 100ms delay in loading can hurt conversion rates by as much as 7% according to a 2017 Akamai study. However, user loyalty or user dependence on your application is variable enough to warrant A/B testing to make the most effective changes.
+With the nearly unlimited selection of possible system design decisions and options for processing and storing data, A/B testing may help increase desired user behavior or decrease cost structure. For example, the slightly increased latency of a downgraded server or alternate service may not be as detrimental to user conversion as the design team anticipates. For other apps, it may be best to upgrade to the most performant architecture the company can afford to maximize potential user conversions – a 100ms delay in loading can hurt conversion rates by as much as 7% according to a 2017 Akamai study. However, user loyalty or user dependence on your application is variable enough to warrant A/B testing to make the most effective changes.
 
 ### Testing APIs / Third-Party Services
 
 It is often efficient and economical to rely on APIs and third-party services for portions of an application. For each desired component, there may be many different options with distinct features, computational and financial costs, and user interfaces. As an example, there may be a significant difference in conversion rates if you allow users to utilize PayPal for their purchases as opposed to only credit cards. There are trade-offs in terms of the cost of using these services, but the increased conversion rate may outweigh the increased cost. Testing these changes prior to implementation allows for a clear understanding of the risks and rewards.
-
----
-
-## Challenges of A/B Testing
-
-### Implementation Challenges
-
-One challenge of A/B testing is ensuring that the appropriate features are shown to a given user and that the user continues to be exposed to that experience over time. In most cases, simply randomizing each request to one of many potential experiences will just not cut it. The approach for ensuring the “stickiness” of the experience can vary depending on whether you’re rolling out a new feature to a small subset of users or trying to conduct an experiment to determine which of several variants results in the highest level of user engagement.
-
-Another challenge of A/B testing is that—unless you are using a What You See Is What You Get tool for testing client-side rendered applications—you’re going to need developer involvement in ensuring that the appropriate features are rendered for a given user given the parameters of a defined experiment. When developing an A/B testing platform, it can be difficult to balance ease-of-use for the developer with robust feature creation and management tools.
-
-### Statistical Challenges
-
-In addition to engineering challenges, there are also a number of statistical challenges related to A/B testing.
-
-First, A/B testing can be less helpful for sites with low traffic. If you are testing a large number of variants or the effect of each variant on user behavior is small, then it could take an extended period of time to generate enough data to see a statistically significant impact.
-
-In addition, if a user is presented with multiple variations at the same time, it can be extremely challenging to determine which specific variant or aspect of the experience was really influencing user behavior. As you will see in the subsequent discussion on Functional Decisions related to Test Lab, this was critical in our decision to limit users to enrollment in a single experiment at a time.
 
 ---
 

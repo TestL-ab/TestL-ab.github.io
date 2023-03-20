@@ -17,7 +17,7 @@ When provided with a unique string to identify a user (stored as a `user_id`), t
 
 In order to evaluate a feature, the SDK considers several attributes of a feature, all of which are stored in or can be calculated from the in-memory representation of the feature configuration:
 
-1. Is the feature active?
+1. Is the feature active or paused?
 2. Is the current date within the start and end date of the scheduled feature
 3. If the feature is a rollout or an experiment, what percent of users should be exposed to the feature?
 4. If the feature is an experiment, is the experiment active for this particular user?

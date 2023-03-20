@@ -44,7 +44,11 @@ Next, when the SDK polls the Test Lab backend server for feature configuration, 
 
 ## Granularity of user-blocks
 
-As described in the last section, the current implementation of Test Lab allows users to be assigned to no more than one experiment at a time. In other words, no more than 100% of the user-base can be allocated to experiments at any point in time. One decision we made was to allocate users to experiments in 5% blocks.
+As described in the last section, the current implementation of Test Lab allows users to be assigned to no more than one experiment at a time. In other words, no more than 100% of the user-base can be allocated to experiments at any point in time.
+
+When creating or updating experiments, the [Admin UI](/docs/admin-ui) evaluates the **minimum** percent of the user-base that is available throughout the duration of the experiment, and that is the **maximum** percent that can be enrolled in a new or updated experiment. This ensures that the user-base is limited to no more than one-experiment per user.
+
+One decision we made was to allocate users to experiments in 5% blocks.
 
 **_The assignment logic would be the same if we used blocks of 1%, so why use 5%?_**
 

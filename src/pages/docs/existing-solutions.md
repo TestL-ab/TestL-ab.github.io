@@ -11,6 +11,8 @@ Existing solutions for A/B testing run the gamut from bare-bones apps exposing A
 
 Options for A/B testing in the “middle-of-the-road” (i.e., solutions that are open source with self-hosting options) are relatively sparse – applications that look promising either fade away and have little to no development or engagement over time or they become fully-featured enterprise options that offer only expensive, managed solutions (e.g., LaunchDarkly, Optimizely).
 
+---
+
 ## Selected A/B Testing Providers and Features
 
 |           Feature            | Firebase |  VWO   | GrowthBook |   Unleash    |      LaunchDarkly      |
