@@ -17,6 +17,12 @@ A demo is in the works and coming soon!
 
 ---
 
+## Viewing Features
+
+![Viewing Features](/images/current_toggles_gif.gif)
+
+---
+
 ## Editing Current, Upcoming, or Past Features
 
 ### Coming Soon
