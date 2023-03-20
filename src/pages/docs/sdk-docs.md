@@ -192,7 +192,7 @@ return render_template('home.html', value=color)
 
 ## Event Tracking
 
-Note that a user will need to make a `post` call with event information (user_id and variant_id) whenever an event occurs that they want to record in the experiment.
+Note that a user will need to make a `post` call with event information (`user_id` and `variant_id`) whenever an event occurs that they want to record in the experiment. See [API docs on creating events](/docs/api-docs#create-events) for more information.
 
 TestLab can only capture data for a single event type per experiment, but you can send data for any type of event that you want to measure as long as the **`post`** payload is an object that contains the **`user_id`** and **`variant_id`** properties.
 
