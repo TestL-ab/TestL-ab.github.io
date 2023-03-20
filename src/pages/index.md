@@ -21,3 +21,7 @@ Learn more about Test Lab and how it can help you make better design decisions t
 {% quick-link title="Presentation" icon="presentation" href="/docs/presentation" description="View the Test Lab case study presentation." /%}
 
 {% /quick-links %}
+
+---
+
+# Executive Summary (TL;DR)
