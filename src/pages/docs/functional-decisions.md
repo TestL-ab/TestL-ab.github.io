@@ -70,13 +70,3 @@ Ultimately, the Test Lab team opted to use polling for several key reasons:
 2. Compatibility: Polling is widely supported by all modern browsers and doesn't require any additional server-side infrastructure or configuration, making it a good choice when compatibility is a concern.
 3. Resource efficiency: Polling can be more resource-efficient than websockets or SSE in situations where the amount of data being transmitted is relatively small or infrequent. This is because websockets and SSE maintain a persistent connection, which can consume more resources on both the client and server. **The Test Lab server only responds with new data when the feature configuration has changed,** which makes polling an efficient choice.
 4. Control: With polling, the client has more control over the frequency of requests and can adjust the polling interval to suit its needs. This can be useful in situations where the rate of updates is variable or unpredictable. In the interest of f
-
----
-
-## Statistical analysis
-
-### Coming Soon
-
-{% callout type="warning" title="Work in Progress!" %}
-A demo is in the works and coming soon!
-{% /callout %}
