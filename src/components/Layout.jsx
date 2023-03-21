@@ -13,8 +13,10 @@ import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
 import Image from 'next/image'
-import MyLogo from '@/images/transparent_logo_darker.png'
-import MyLogomark from '@/images/logo_icon_transparent.png'
+import MyLogo from '@/images/transparent_logo.png'
+import MyLogoDarker from '@/images/transparent_logo_darker.png'
+//import MyLogomark from '@/images/logo_icon_transparent.png'
+import MyLogomark from '@/images/beaker_logo.png'
 
 const navigation = [
   // {
@@ -164,6 +166,11 @@ function Header({ navigation }) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
+          <Image
+            className="h-9 w-9 lg:hidden"
+            alt="logomark"
+            src={MyLogomark}
+          ></Image>
           <Image
             className="hidden h-12 w-auto fill-slate-700 dark:fill-sky-100 lg:block"
             alt="logo"
