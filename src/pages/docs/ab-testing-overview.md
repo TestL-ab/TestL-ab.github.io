@@ -1,3 +1,8 @@
+---
+title: A/B Testing Overview
+description: An overview of A/B testing and use cases, and implementation options.
+---
+
 ## Small changes can have a big impact
 
 In established applications, even the smallest changes can have a significant impact that may not be predictable or obvious to the development team. In some cases, it’s best left to the end user to truly decide which modifications to make to the application. Presenting an application change to a “test” audience of users and observing their behavior can add empirical data to the process of making improvements to increase conversion rates or alter desired user behavior.
@@ -17,7 +22,7 @@ percentage to the control.
 
 ![Alt Text](/images/ab_testing_overview.png)
 
-Once users are assigned to a test variant, data analytics can be gathered and compiled from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling users to interact with both versions and using data analysis to compare their responses with the proposed goal, the design team can make an informed decision as to whether to roll out the change to the whole user base.
+Once users are assigned to a test variant, data can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling users to interact with both versions and using data analysis to compare their responses with the proposed goal, the design team can make an informed decision as to whether to roll out the change to the whole user base.
 
 ---
 
@@ -27,7 +32,7 @@ Use cases for A/B testing can include design changes, feature experimentation, h
 
 ### UI and Design Changes
 
-While simple decisions about a website’s color or the shape of a button might seem minor, these design choices can have significant consequences. As mentioned above, in 2009, Google famously implemented a test in which they tested 41 different shades of blue for their links, compared user behavior with each variant, and not only identified the shade that users preferred, but also determined that making the switch to that shade would result in an additional annual revenue of about $200 million. This may be an extreme example, but it does illustrate that even subtle changes can have a dramatic impact on user behavior. Rather than leaving these changes up to guesswork, it is worthwhile to obtain actual user analytics before deploying a potentially costly “minor” design change.
+While simple decisions about a website’s color or the shape of a button might seem minor, these design choices can have significant consequences. As mentioned above, in 2009, Google famously implemented a test in which they tested 41 different shades of blue for their links and compared user behavior with each variant. Not only did they identify the shade that users preferred, but they also predicted that making the switch to that shade would result in an additional annual revenue of about $200 million. This may be an extreme example, but it does illustrate that even subtle changes can have a dramatic impact on user behavior. Rather than leaving these changes up to guesswork, it is worthwhile to obtain actual user analytics before deploying a potentially costly “minor” design change.
 
 ### Feature Experimentation
 
@@ -51,7 +56,7 @@ A/B tests can be implemented in the client-side, server-side, CDN, or API/micros
 
 A/B tests are most commonly implemented on the client-side, and these types of tests typically rely on third-party services. Users are assigned to test and control groups randomly, and the DOM is modified for the test group.
 
-A key advantage of client-side implementation is that it’s easy for developers, as there are many existing third-party services (including but not limited to Google Optimize, Optimizely, Adobe Target, and many others). There is no inherent need to build a testing platform from scratch, and many of these tools can be implemented with no developer expertise at all.
+A key advantage of client-side implementation is that it’s easy for developers, as there are many existing third-party services (including but not limited to Google Optimize, Optimizely, and VWO). There is no inherent need to build a testing platform from scratch, and many of these tools can be implemented with no developer expertise at all.
 
 On the downside, client-side implementation of A/B tests can cause a strange user experience, as you have to re-render the page for the test group after having the original page flash briefly on their screen. Client-side implementation can also have an undesirable impact on sites that utilize React, Angular, and other libraries and frameworks, as the DOM will not match the virtual DOM for those who are part of the test group.
 
@@ -67,9 +72,9 @@ On the other hand, there are fewer third-party options for implementing server-s
 
 A/B testing can also be implemented via a CDN, where the CDN randomly assigns users to either the control or the test implementation, routes them directly to a different path, and uses cookies in the browser to capture analytics.
 
-Since you have entirely separate branches of code for your existing version and your test version(s), it is easier to fully switch the entire user base to the successful version after the experiment is complete. This approach is ideal for static sites that are already stored on a CDN, as many CDNs are already offering this service. In addition, since users are sent directly to one side or the other, you don’t have the potential “flash” of the original site for users in the test group.
+Since you have entirely separate branches of code for your existing version and your test version(s), it is easier to fully switch the entire user base to the successful version after the experiment is complete. This approach is ideal for static sites that are already hosted on a CDN, as many CDNs already offer this service. In addition, since users are sent directly to one site or the other, you don’t have the potential “flash” of the original site for users in the test group.
 
-However, since the CDN does not store user data, there is no way to curate test subjects. Assignment is random, which also means that traffic must be split evenly between the two sites in order to avoid cache misses that would occur if one version of the site is underutilized.
+However, since the CDN does not store user data, there is no way to use this data to curate the user experience. Assignment is random, which also means that traffic must be split evenly between the two sites in order to avoid cache misses that could occur if one version of the site is underutilized.
 
 ### API / Microservice Implementation
 
