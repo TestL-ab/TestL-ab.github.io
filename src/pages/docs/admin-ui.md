@@ -47,7 +47,7 @@ _Please be aware that deleting is a destructive, non-reversible action, and by c
 
 ---
 
-## Editing Current, Upcoming, or Past Features
+## Editing Features
 
 ### Coming Soon
 
