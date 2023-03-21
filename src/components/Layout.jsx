@@ -143,7 +143,6 @@ function GitHubIcon(props) {
 }
 
 function Header({ navigation }) {
-  const { resolvedTheme } = useTheme()
   let [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -155,7 +154,7 @@ function Header({ navigation }) {
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
-  }, [resolvedTheme])
+  }, [])
 
   return (
     <header
@@ -179,7 +178,7 @@ function Header({ navigation }) {
           <Image
             className="hidden h-12 w-auto fill-slate-700 dark:fill-sky-100 lg:block"
             alt="logo"
-            src={resolvedTheme === 'light' ? lightLogo : darkLogo}
+            src={darkLogo}
           ></Image>
         </Link>
       </div>
