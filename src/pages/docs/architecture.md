@@ -11,7 +11,7 @@ Test Lab is loosely modeled on the Unleash A/B testing platform, offering users 
 
 The Test Lab A/B Testing and Feature Flagging Platform consists of four key components:
 
-1. A backend server that exposes APIs for creating, editing, and deleting features, retrieving feature configurations, and collecting and retrieving feature data
-2. An Admin User Interface (Admin UI) that facilitates creating, editing, deleting, and viewing current, scheduled, and past features as well as viewing experiment data / results
-3. A database for persisting data that defines the features, the blocks of the user base allocated to each experiment, and event data for experiment analytics
-4. Native SDKs for Node, React, Ruby, and Python for communicating directly with the Test Lab API and allocating individual requests to the appropriate feature(s)
+1. A [backend server](/docs/backend-server) that exposes APIs for creating, editing, and deleting features, retrieving feature configurations, and collecting and retrieving feature data
+2. An [Admin User Interface (Admin UI)](/docs/admin-ui) that facilitates creating, editing, deleting, and viewing current, scheduled, and past features as well as viewing experiment data / results
+3. A [database](/docs/database) for persisting data that defines the features, the blocks of the user base allocated to each experiment, and event data for experiment analytics
+4. Native [SDKs](/docs/sdk) for Node, React, Ruby, and Python for communicating directly with the Test Lab API and allocating individual requests to the appropriate feature(s)
