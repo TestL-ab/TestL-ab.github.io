@@ -19,7 +19,11 @@ A demo is in the works and coming soon!
 
 ## Viewing Features
 
-![Viewing Features](/images/current_toggles_gif.gif)
+To view the **Current Toggles**, **Current Rollouts**, **Current Experiments**, **Upcoming Features**, or **Past Experiments**, click on the appropriate link in the side navigation menu. Details for each feature can be seen by clicking on the **+** icon next to the feature name. All currently running features can be paused or resumed as needed by clicking on the **Pause/Resume** button. All features—current, upcoming, and past—can be deleted by clicking on the **Delete** button.
+
+_Please be aware that deleting is a destructive, non-reversible action, and by confirming the delete all information relating to that feature will be permanently deleted from the database._
+
+![Viewing Features](/images/ListOverview.gif)
 
 ---
 
