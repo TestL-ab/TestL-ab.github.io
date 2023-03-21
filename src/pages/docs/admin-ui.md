@@ -9,11 +9,31 @@ The Admin UI is used to create, edit, delete, and view current, upcoming, and pa
 
 ## Creating New Features
 
-### Coming Soon
+### Toggle or Rollout
 
-{% callout type="warning" title="Work in Progress!" %}
-A demo is in the works and coming soon!
-{% /callout %}
+To create a new toggle or rollout, click on the **Create New Feature** link in the side navigation bar. Enter the title and description for your new feature. Select either Toggle or Rollout to indicate which type of feature you are creating.
+
+Select the start and end dates for this feature by clicking on the calendar and selecting the appropriate dates. _All users are automatically enrolled in toggles, so there is no need to specify the user percentage for feature toggles_. For feature rollouts, select the percentage of total users that you would like to expose to the feature.
+
+![Create Toggle or Rollout](/images/CreateToggleOrRollout.gif)
+
+### Experiment
+
+To create a new experiment, click on the **Create New Feature** link in the side navigation bar. Enter the title and description, including your hypothesis for your new experiment. Select **Experiment** from the list of feature types, and then select the start and end dates for your experiment by clicking on the calendar and selecting the appropriate dates.
+
+In order to ensure that the percentage of users to be enrolled in a new experiment does not exceed the number of user-blocks available for the selected date range, the Admin UI dynamically populates the maximum percentage of users that are available during the entire specified date range, based on existing experiments scheduled during that period.
+
+![Create Experiment](/images/CreateExperiment.gif)
+
+After creating a new experiment, users of the Admin UI are taken to the variant creation form. To create variants, enter the value that you will be using to identify that variant, along with the percentage of users enrolled in the experiment that you would like to be assigned to that variant.
+
+It is important to note that each variant name for the experiment must be unique, and exactly 100% of users must be allocated to variants within a particular experiment.
+
+All experiments must have at least two variants, and may have up to five variants. To increase or decrease variants, click the _Add Another Variant_ or _Remove Variant_ buttons as needed.
+
+If you created the experiment by mistake and do not want to assign variants, you may either _delete it entirely_, _change it to a roll-out_, which will enroll the same percentage of users that you selected for the experiment, or _change it to a toggle_ which will enroll 100% of users in the feature.
+
+![Create Variants](/images/CreateVariants.gif)
 
 ---
 
