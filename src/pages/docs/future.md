@@ -30,7 +30,7 @@ Additional functionality currently on our roadmap includes:
 - Offering additional analytics in the visualizer portion of the Admin UI
 - Additional error handling in the backend server to cover cases that are currently handled in the Admin UI but not when accessing the APIs directly
 - Bolstering the testing suite in the Admin UI
-- Allowing for the specifications to always include or never include in certain features
-- Allowing for the tracking of multiple event types for a single experiment
+- Allowing clients to specify users or groups to always include or never include in certain features
+- Tracking of multiple event types for a single experiment
 - Tool to predict the required sample sizes needed to achieve a statistically significant result for an experiment
 - An option in the Admin UI to download raw data directly, instead of accessing it through the API
