@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
 
 import { Layout } from '@/components/Layout'
+import { ThemeProvider } from 'next-themes'
 
 import 'focus-visible'
 import '@/styles/tailwind.css'
@@ -62,7 +63,7 @@ export default function App({ Component, pageProps }) {
     : []
 
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
@@ -70,6 +71,6 @@ export default function App({ Component, pageProps }) {
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </ThemeProvider>
   )
 }

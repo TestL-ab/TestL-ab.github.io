@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
@@ -17,6 +18,9 @@ import MyLogo from '@/images/transparent_logo.png'
 import MyLogoDarker from '@/images/transparent_logo_darker.png'
 //import MyLogomark from '@/images/logo_icon_transparent.png'
 import MyLogomark from '@/images/beaker_logo.png'
+
+import darkLogo from '@/images/transparent_logo.png'
+import lightLogo from '@/images/transparent_logo_darker.png'
 
 const navigation = [
   // {
@@ -139,6 +143,7 @@ function GitHubIcon(props) {
 }
 
 function Header({ navigation }) {
+  const { resolvedTheme } = useTheme()
   let [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -150,7 +155,7 @@ function Header({ navigation }) {
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
-  }, [])
+  }, [resolvedTheme])
 
   return (
     <header
@@ -174,7 +179,7 @@ function Header({ navigation }) {
           <Image
             className="hidden h-12 w-auto fill-slate-700 dark:fill-sky-100 lg:block"
             alt="logo"
-            src={MyLogo}
+            src={resolvedTheme === 'light' ? lightLogo : darkLogo}
           ></Image>
         </Link>
       </div>

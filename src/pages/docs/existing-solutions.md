@@ -20,7 +20,7 @@ Options for A/B testing in the “middle-of-the-road” (i.e., solutions that ar
 |      Self-Hosted Option      |   None   |  None  |   Docker   | Docker, Node |          None          |
 |        Managed Option        |   Yes    |  Yes   |    Yes     |     Yes      |        Required        |
 |    Analytics Data Storage    |    No    |   No   |     No     |      No      |          Yes           |
-|  Client Data Store Required  |    No    |   No   |    Yes     |      No      |          `No           |
+|  Client Data Store Required  |    No    |   No   |    Yes     |      No      |           No           |
 |           WYSIWYG            |    No    |  Yes   |     No     |      No      |           No           |
 | Developer Expertise Required |   Yes    |   No   |    Yes     |     Yes      |          Yes           |
 |    Client- or Server-Side    |  Client  | Client |    Both    |     Both     |          Both          |
