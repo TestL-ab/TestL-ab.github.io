@@ -57,16 +57,6 @@ A demo is in the works and coming soon!
 
 ---
 
-## Viewing Experiment Details
-
-### Coming Soon
-
-{% callout type="warning" title="Work in Progress!" %}
-A demo is in the works and coming soon!
-{% /callout %}
-
----
-
 ## Experiment Data Visualizer
 
 ### Coming Soon
