@@ -29,7 +29,7 @@ After creating a new experiment, users of the Admin UI are taken to the variant 
 
 It is important to note that each variant name for the experiment must be unique, and exactly 100% of users must be allocated to variants within a particular experiment.
 
-All experiments must have at least two variants, and may have up to five variants. To increase or decrease variants, click the _Add Another Variant_ or _Remove Variant_ buttons as needed.
+All experiments must have at least two variants, and may have up to five variants. To increase or decrease variants, click the **Add Another Variant** or **Remove Variant** buttons as needed.
 
 If you created the experiment by mistake and do not want to assign variants, you may either _delete it entirely_, _change it to a roll-out_, which will enroll the same percentage of users that you selected for the experiment, or _change it to a toggle_ which will enroll 100% of users in the feature.
 
