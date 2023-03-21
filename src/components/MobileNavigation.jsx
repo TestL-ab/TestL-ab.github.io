@@ -7,7 +7,8 @@ import { Logomark } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
 
 import Image from 'next/image'
-import MyLogomark from '@/images/logo_icon_transparent.png'
+//import MyLogomark from '@/images/logo_icon_transparent.png'
+import MyLogomark from '@/images/beaker_logo.png'
 
 function MenuIcon(props) {
   return (
