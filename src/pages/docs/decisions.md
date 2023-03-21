@@ -24,3 +24,13 @@ Ultimately, we chose to use PostgreSQL to store data for the Test Lab A/B testin
 1. Structured data: SQL databases are designed to store structured data, which is ideal for A/B testing data. In particular, feature configurations require specific data types. Although we have logic in both the Admin UI and the Test Lab backend server ensuring appropriate data structure is used, the rigidity of the PostgreSQL database gave us an additional layer of validation.
 2. Data consistency: SQL databases provide transactional support, ensuring that data is consistent and accurate. This is particularly important for A/B testing platforms, where data accuracy and consistency are critical to making informed decisions based on experiment results.
 3. Reliability: SQL databases are known for their reliability and durability, making them a great choice for storing critical data such as A/B testing results. PostgreSQL, in particular, has a reputation for being one of the most reliable and robust open-source databases available.
+
+---
+
+## API Access
+
+When designing our Test Lab backend server, we had to determine whether we wanted to force users to interact with the API solely through the Admin UI or whether we also wanted to provide direct API access as well. Keeping with our theme of **flexibility**, we decided to offer direct API access in addition to our Admin UI.
+
+A downside of this choice is that we do not yet have all of the validation built into the backend server that we have in the Admin UI. We do enforce that the format of created and updated features, variants, users, and events are correct whether the action came from the Admin UI or direct API access. However, there are some validation features present in the Admin UI that do not currently carry over to the backend server, including ensuring that no more than 100% of the user base is enrolled in an experiment over a given time period. In addition, a developer could use the API to incorrectly add variants to rollout or toggle features, even though that functionality is limited to experiments.
+
+Overall, we felt that the flexibility of allowing developers to interact with the API in the way that is most helpful for their application outweighed the potention downsides of the developer using the API endpoints incorrectly. As a way to mitigate this risk, we provide [extensive API documentation](/docs/api-docs) to help guide the correct use of the Test Lab routes.
