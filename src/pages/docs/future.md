@@ -11,7 +11,7 @@ In previous discussion, we explained our [logic](/docs/functional-decisions#gran
 
 ## SSEs for real-time updates
 
-Right now there is no way for a user to understand the "health" of an experiment. Errors are typically handled in such a way that it does not detract from the user experience, but that also means that it may not be clear when something is going wrong with a particular features. We believe that adding SSEs to communicate any errors from the backend server to the Admin UI could be a valuable addition. We envision a dashboard where we can display "experiment health" metrics on current experiments so that the client can be confident that the experiments are performing as designed.
+Right now there is no way for a user to understand the "health" of an experiment. Errors are typically handled in such a way that it does not detract from the user experience, but that also means that it may not be clear when something is going wrong with particular features. We believe that adding SSEs to communicate any errors from the backend server to the Admin UI could be a valuable addition. We envision a dashboard where we can display "experiment health" metrics on current experiments so that the client can be confident that the experiments are performing as designed.
 
 ---
 
