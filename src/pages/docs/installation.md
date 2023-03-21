@@ -1,15 +1,15 @@
 ---
 title: Installation
-description: TestLab is Dockerized and can easily be deployed to the server of your choice or AWS Elastic Container Service.
+description: Test Lab is Dockerized and can easily be deployed to the server of your choice or AWS Elastic Container Service.
 ---
 
-TestLab is Dockerized and can easily be deployed to the server of your choice or AWS Elastic Container Service.
+Test Lab is Dockerized and can easily be deployed to the server of your choice or AWS Elastic Container Service.
 
 ---
 
-## Install the TestLab Application
+## Install the Test Lab Application
 
-The TestLab suite includes the client, the server, and a PostgreSQL database. Start by cloning the TestLab Docker Repository.
+The Test Lab suite includes the Admin UI, the backend server, and a PostgreSQL database. Start by cloning the Test Lab Docker Repository.
 
 ```shell
 git clone https://github.com/TestL-ab/testlab-docker.git
@@ -18,7 +18,7 @@ cd testlab-docker
 
 ### Deploy to a Local or Virtual Server
 
-To launch TestLab in detached mode:
+To launch Test Lab in detached mode:
 
 ```shell
 docker-compose up -d
