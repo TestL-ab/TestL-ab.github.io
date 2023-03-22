@@ -24,7 +24,7 @@ Learn more about Test Lab and how it can help you make better design decisions t
 
 ---
 
-# Executive Summary (TL;DR)
+## Executive Summary (TL;DR)
 
 > **TestLab is an open-source, self-hosted feature flagging and experimentation platform.**
 
