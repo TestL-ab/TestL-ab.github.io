@@ -21,6 +21,8 @@ In the current implementation of Test Lab, we provide clients with a visual repr
 
 In the interest of **flexibility**, we provide a qualitative representation of their event data and offer the opportunity to obtain and analyze their event data with their preferred metric. However, we realize that there may be value in providing simple measures of statistical significance for commonly used types of experiments, and this is something that we plan to explore.
 
+In addition, once some measure of statistical significance is in place, we believe that allowing users to convert the winning variant into either a toggle or a rollout after completing an experiment could be a useful future component.
+
 ---
 
 ## Roadmap
@@ -30,6 +32,7 @@ Additional functionality currently on our roadmap includes:
 - Offering additional analytics in the visualizer portion of the Admin UI
 - Additional error handling in the backend server to cover cases that are currently handled in the Admin UI but not when accessing the APIs directly
 - Bolstering the testing suite for the Admin UI
+- Using past features as templates for generating new features
 - Allowing clients to specify users or groups to always include or never include in certain features
 - Tracking of multiple event types for a single experiment
 - Tool to predict the required sample sizes needed to achieve a statistically significant result for an experiment
