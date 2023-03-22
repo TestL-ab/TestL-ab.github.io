@@ -33,7 +33,7 @@ Test Lab provides a **feature management** infrastructure that for the creation 
 The Test Lab A/B Testing and Feature Flagging Platform consists of:
 
 1. A Node.js / Express [backend server](/docs/backend-server) that exposes APIs for creating, editing, and deleting features, retrieving feature configurations, and collecting and retrieving feature data
-2. An [Admin User Interface (Admin UI)](/docs/admin-ui) build with React that facilitates creating, editing, deleting, and viewing current, scheduled, and past features as well as viewing experiment data / results
+2. An [Admin User Interface (Admin UI)](/docs/admin-ui) built with React that facilitates creating, editing, deleting, and viewing current, scheduled, and past features as well as viewing experiment data / results
 3. A PostgreSQL [database](/docs/database) for persisting data that defines the features, the blocks of the user base allocated to each experiment, and event data for experiment analytics
 4. Native [SDKs](/docs/sdk) for Node.js, React, Ruby, and Python for communicating directly with the Test Lab API and allocating individual requests to the appropriate feature(s)
 
