@@ -28,7 +28,7 @@ Learn more about Test Lab and how it can help you make better design decisions t
 
 > **TestLab is an open-source, self-hosted feature flagging and experimentation platform.**
 
-Test Lab provides a **feature management** infrastructure that for the creation of feature toggles, rollouts, and experiments, with **native SDKs** to evaluate features and allow rendering of user-specific variants. Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments and determine whether the specified variation resulted in changes in user behavior. Test Lab is Dockerized and can be deployed on your localhost, virtual private server, or AWS Elastic Container Service with one simple command.
+Test Lab provides **feature management** infrastructure for the creation of feature toggles, rollouts, and experiments, with **native SDKs** to evaluate features and allow rendering of user-specific variants. Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments and determine whether the specified variation resulted in changes in user behavior. Test Lab is Dockerized and can be deployed on your localhost, virtual private server, or AWS Elastic Container Service with one simple command.
 
 The Test Lab A/B Testing and Feature Flagging Platform consists of:
 
