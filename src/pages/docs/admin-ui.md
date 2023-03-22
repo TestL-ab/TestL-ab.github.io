@@ -41,7 +41,7 @@ If you created the experiment by mistake and do not want to assign variants, you
 
 To view the **Current Toggles**, **Current Rollouts**, **Current Experiments**, **Upcoming Features**, or **Past Experiments**, click on the appropriate link in the side navigation menu. Details for each feature can be seen by clicking on the **+** icon next to the feature name. All currently running features can be paused or resumed as needed by clicking on the **Pause/Resume** button. All features—current, upcoming, and past—can be deleted by clicking on the **Delete** button.
 
-_Please be aware that deleting is a destructive, non-reversible action, and by confirming the delete all information relating to that feature will be permanently deleted from the database._
+> Please be aware that deleting is a destructive, non-reversible action, and, by confirming the delete, all information relating to that feature will be permanently deleted from the database.
 
 ![Viewing Features](/images/ListOverview.gif)
 
@@ -53,7 +53,7 @@ To edit current and upcoming features, use the navigation menu to navigate to th
 
 To edit variant details for experiments, once inside the edit modal for the relevant experiment, click the **Show Variant Form/Show Experiment Form** button to toggle between the forms for updating variants and updating experiment details as needed.
 
-_Note: feature types cannot be changed after creation, and start dates may not be changed for current features. In order to ensure the integrity of data analysis, variant weights and number of variants cannot be edited for experiments that are already ongoing. Past experiments can be deleted, but not edited._
+> Feature types cannot be changed after creation, and start dates may not be changed for current features. In order to ensure the integrity of data analysis, variant weights and number of variants cannot be edited for experiments that are already ongoing. Past experiments can be deleted, but not edited.
 
 ### Updating Toggles and Rollouts
 
