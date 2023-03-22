@@ -44,6 +44,8 @@ module.exports = {
               content: '""',
             },
             code: { color: '#0ea5e9' },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
           },
         },
       },

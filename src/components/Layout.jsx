@@ -98,6 +98,7 @@ const navigation = [
   {
     title: 'Documentation',
     links: [
+      { title: 'Installation', href: '/docs/installation' },
       { title: 'API Documentation', href: '/docs/api-docs' },
       { title: 'SDK Documentation', href: '/docs/sdk-docs' },
       { title: 'References', href: '/docs/references' },

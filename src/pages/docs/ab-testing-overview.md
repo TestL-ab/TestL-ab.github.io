@@ -22,7 +22,7 @@ percentage to the control.
 
 ![Alt Text](/images/ab_testing_overview.png)
 
-Once users are assigned to a test variant, data can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling users to interact with both versions and using data analysis to compare their responses with the proposed goal, the design team can make an informed decision as to whether to roll out the change to the whole user base.
+Once users are assigned to a test variant, data can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling distinct groups of users to interact with each version and using data analysis to compare their responses with the proposed goal, the design team can make an informed decision as to whether to roll out the change to the whole user base.
 
 ---
 
@@ -54,7 +54,7 @@ A/B tests can be implemented in the client-side, server-side, CDN, or API/micros
 
 ### Client-Side Implementation
 
-A/B tests are most commonly implemented on the client-side, and these types of tests typically rely on third-party services. Users are assigned to test and control groups randomly, and the DOM is modified for the test group.
+A/B tests are most commonly implemented on the client-side, and these types of tests typically rely on third-party services. Users are assigned to test and control groups randomly, and the DOM is modified for the test group using JavaScript.
 
 A key advantage of client-side implementation is that it’s easy for developers, as there are many existing third-party services (including but not limited to Google Optimize, Optimizely, and VWO). There is no inherent need to build a testing platform from scratch, and many of these tools can be implemented with no developer expertise at all.
 

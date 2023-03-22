@@ -49,11 +49,15 @@ _Please be aware that deleting is a destructive, non-reversible action, and by c
 
 ## Editing Features
 
-### Coming Soon
+To update current and upcoming features, use the navigation menu to navigate to the list that contains the feature you wish to update. Click the **Edit** button that at corresponds to that feature, and make any desired alterations.
 
-{% callout type="warning" title="Work in Progress!" %}
-A demo is in the works and coming soon!
-{% /callout %}
+For _experiments_, once you are in the edit modal click **Show Variant Form/Show Experiment Form** button to toggle between the form for updating the variants and updating the overall experiment details as needed.
+
+_Note: feature types cannot be changed after creation, and start dates may not be changed for current features. Past experiments can be deleted, but not edited._
+
+### Toggles and Rollouts
+
+![Updating Rollouts](/images/UpdateRollout.gif)
 
 ---
 
