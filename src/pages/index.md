@@ -41,6 +41,6 @@ This case study explores key decisions made when designing and implementing the 
 
 - Architectural decisions regarding Test Lab [hosting](/docs/decisions#managed-versus-self-hosted), [database](/docs/decisions#database-type) type, and [API access](/docs/decisions#api-access)
 
-* Functional decisions relating to the ["stickiness"](/docs/functional-decisions#"stickiness"-of-the-user-experience) of the user experience, limiting users to one concurrent experiment with [user-blocks]("/docs/functional-decisions#limiting-users-to-one-concurrent-experiment), the [granularity](/docs/functional-decisions#granularity-of-user-blocks) of user-blocks, and using [polling](/docs/functional-decisions#polling-to-retrieve-updated-feature-data) to retrieve updated feature data
+* Functional decisions relating to the ["stickiness"](/docs/functional-decisions#"stickiness"-of-the-user-experience) of the user experience, limiting users to one concurrent experiment with [user-blocks](/docs/functional-decisions#limiting-users-to-one-concurrent-experiment), the [granularity](/docs/functional-decisions#granularity-of-user-blocks) of user-blocks, and using [polling](/docs/functional-decisions#polling-to-retrieve-updated-feature-data) to retrieve updated feature data
 
 Test Lab includes a full [test suite](/docs/testing) on its backend server as well as documentation on [installation](/docs/installation), [APIs](/docs/api-docs), and [SDKs](/docs/sdk-docs).
