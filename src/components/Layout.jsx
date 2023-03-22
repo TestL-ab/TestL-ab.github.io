@@ -21,6 +21,7 @@ import MyLogomark from '@/images/beaker_logo.png'
 
 import darkLogo from '@/images/transparent_logo.png'
 import lightLogo from '@/images/transparent_logo_darker.png'
+import loopingLogo from '@/images/loopingLogo-cropped-cropped.svg'
 
 const navigation = [
   // {
@@ -176,6 +177,11 @@ function Header({ navigation }) {
             alt="logomark"
             src={MyLogomark}
           ></Image>
+          {/* <Image
+            className="hidden h-12 w-auto fill-slate-700 dark:fill-sky-100 lg:block"
+            alt="logo"
+            src={loopingLogo}
+          ></Image> */}
           <Image
             className="hidden h-12 w-auto fill-slate-700 dark:fill-sky-100 lg:block"
             alt="logo"

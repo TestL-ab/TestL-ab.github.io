@@ -49,15 +49,23 @@ _Please be aware that deleting is a destructive, non-reversible action, and by c
 
 ## Editing Features
 
-To update current and upcoming features, use the navigation menu to navigate to the list that contains the feature you wish to update. Click the **Edit** button that at corresponds to that feature, and make any desired alterations.
+To edit current and upcoming features, use the navigation menu to navigate to the list that contains the feature you wish to update. Click the **Edit** button that at corresponds to that feature, and make any desired alterations.
 
-For _experiments_, once you are in the edit modal click **Show Variant Form/Show Experiment Form** button to toggle between the form for updating the variants and updating the overall experiment details as needed.
+To edit variant details for experiments, once inside the edit modal for the relevant experiment, click the **Show Variant Form/Show Experiment Form** button to toggle between the forms for updating variants and updating experiment details as needed.
 
-_Note: feature types cannot be changed after creation, and start dates may not be changed for current features. Past experiments can be deleted, but not edited._
+_Note: feature types cannot be changed after creation, and start dates may not be changed for current features. In order to ensure the integrity of data analysis, variant weights and number of variants cannot be edited for experiments that are already ongoing. Past experiments can be deleted, but not edited._
 
-### Toggles and Rollouts
+### Updating Toggles and Rollouts
 
 ![Updating Rollouts](/images/UpdateRollout.gif)
+
+### Updating Variants in Current Experiments
+
+![Updating Variants - Current](/images/UpdateVariantsCurrentExperiment.gif)
+
+### Updating Variants in Upcoming Experiments
+
+![Updating Variants - Upcoming](/images/UpdateVariantUpcomingExperiment.gif)
 
 ---
 
