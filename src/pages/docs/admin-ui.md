@@ -65,14 +65,12 @@ To edit variant details for experiments, once inside the edit modal for the rele
 
 ### Updating Variants in Upcoming Experiments
 
-![Updating Variants - Upcoming](/images/UpdateVariantUpcomingExperiment.gif)
+![Updating Variants](/images/UpdateVariantUpcomingExperiment.gif)
 
 ---
 
 ## Experiment Data Visualizer
 
-### Coming Soon
+To view data results from past experiments, or in-progress data for current experiments, navigate to the experiment that you wish to view, click on the **View Experiment Details** button, and then the **View Analytics** button. This will display a raw event data graph, a normalized event data graph, and a timeline chart of events displayed by date.
 
-{% callout type="warning" title="Work in Progress!" %}
-A demo is in the works and coming soon!
-{% /callout %}
+![Visualizer](/images/Visualizer.gif)
