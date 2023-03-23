@@ -62,7 +62,7 @@ Therefore, as a starting point, we decided that 5% was a reasonable minimum of t
 
 The Test Lab team considered a number of options for ensuring that the in-memory representation of the feature configuration created by the SDK remains up to date as features change over time. Some options that were considered were websockets, server-sent events (SSEs), and polling.
 
-![Alt Text](/images/pollingDecision.png)
+![Alt Text](/images/pollingDecision-updated.png)
 
 Ultimately, the Test Lab team opted to use polling for several key reasons:
 
