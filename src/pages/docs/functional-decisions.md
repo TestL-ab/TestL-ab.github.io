@@ -1,5 +1,5 @@
 ---
-title: Functional Decisions
+title: Design Decisions
 description: Key decisions made when developing the Test Lab functionality.
 ---
 

@@ -5,24 +5,24 @@ description: An overview of A/B testing and use cases, and implementation option
 
 ## Small changes can have a big impact
 
-In established applications, even the smallest changes can have a significant impact that may not be predictable or obvious to the development team. In some cases, it’s best left to the end user to truly decide which modifications to make to the application. Presenting an application change to a “test” audience of users and observing their behavior can add empirical data to the process of making improvements to increase conversion rates or alter desired user behavior.
+In established applications, even the smallest changes can have a significant impact that may not be predictable or obvious to the development team. In some cases, user behavior can be used by a company to inform app optimizations. Presenting an application change to a “test” audience of users and observing their behavior can add empirical data to the process of making improvements. This can increase conversion rates or alter desired user behavior.
 
-Google famously tested over 40 different shades of
-blue for ad links, resulting in a final color choice that added nearly $200M in revenue. A/B testing allows the development team to make informed decisions based on quantitative data points and
+[Google famously tested over 40 different shades of
+blue for ad links](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers), resulting in a final color choice that added nearly $200M in revenue. A/B testing allows companies to make informed decisions based on quantitative data points and
 analytics. These decisions can increase desired user behavior and may help identify more efficient or cost-effective solutions. A/B testing prior to rollout also reduces the risk of making a detrimental design choice based on perceived aesthetic preference rather than actual user behavior.
 
 ## Hypotheses, experiments, and results
 
-**A/B testing** (also called split testing) is a tool that is used to compare the way users engage with two or more
-distinct website variations. Prior to conducting an A/B test, a design team will create a **hypothesis** as to the
-way that a modification is expected to impact a specific user behavior, such as click-through rates, bounce
+**A/B testing** (also called split testing) is a tool that is used to compare the way users engage with two or more distinct versions of a website. Those versions may have visible differences in the user interface, or there may be differences in hardware, software, or APIs that may not be visible to the user but could otherwise affect the user experience.
+
+Prior to conducting an A/B test, a design team will create a **hypothesis** about how a modification is expected to impact a specific user behavior, such as click-through rates, bounce
 rates, or conversion rates. Next, a **variation** of the original site is created that features the proposed design
 change, and an A/B test tool is used to direct a certain percentage of users to the variant and a certain
 percentage to the control.
 
 ![Alt Text](/images/ab_testing_overview.png)
 
-Once users are assigned to a test variant, data can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling distinct groups of users to interact with each version and using data analysis to compare their responses with the proposed goal, the design team can make an informed decision as to whether to roll out the change to the whole user base.
+Once users are assigned to a test variant, data can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling distinct groups of users to interact with each version and using data analysis to compare their responses with the proposed goal, companies can make an informed decision as to whether to roll out the change to the whole user base.
 
 ---
 

@@ -86,7 +86,7 @@ const navigation = [
       },
       // { title: 'Self-Hosting', href: '/docs/architecture' },
       // { title: 'Database Type', href: '/docs/admin-ui' },
-      { title: 'Functional Decisions', href: '/docs/functional-decisions' },
+      { title: 'Design Decisions', href: '/docs/functional-decisions' },
       // { title: 'User "Stickiness"', href: '/docs/backend-server' },
       // { title: 'One Experiment per User', href: '/docs/database' },
       // { title: 'User-block Granularity', href: '/docs/sdk' },
