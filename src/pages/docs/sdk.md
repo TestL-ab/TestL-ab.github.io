@@ -85,4 +85,4 @@ The first time that the SDK client fetches feature configurations, it makes a re
 
 Once the initial fetch is complete, the SDK client sends subsequent requests at the specified intervals with a `If-Modified-Since` header. The Test Lab backend server keeps track of the last time feature data was modified, and it simply returns a `304 Not Modified` status if no changes have been made since the last request. If changes have been made, then the updated feature configuration data is returned, and the in-memory representation of the feature configuration is updated by the SDK.
 
-![Alt Text](/images/polling-updated.png)
+![Alt Text](/images/Polling-dark.jpg)
