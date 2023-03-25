@@ -29,9 +29,9 @@ Although this is certainly a straightforward solution, it only works for **clien
 
 In order to evaluate the results of an A/B test, you need to collect some form of event data. As you will see in the next section, many A/B testing platforms including Firebase, GrowthBook, and Unleash rely on data already being collected through services such as Google Analytics.
 
-However, this can be a challenge if an application is not already collecting its own event data. Applications that are just getting started in A/B testing may not have a preferred analytics platform, and they may not be collecting their own event data (or may not be collecting it in such a way that it is amenable to A/B testing).
+However, this can be a challenge if a company is not already collecting event data for its application. Companies that are just getting started in A/B testing may not have a preferred analytics platform, and they may not be collecting their own event data (or may not be collecting it in such a way that it is amenable to A/B testing).
 
-An option for these applications is to use an A/B testing platform that also collects and stores event data. However, there are trade-offs to consider, as the application would need to consider whether they retain full ownership and control of their event data and any user data that may be associated with those events. In addition, applications would need additional developer time and expertise to ensure that event data is properly sent to the A/B testing platform.
+An option in this situation is to use an A/B testing platform that also collects and stores event data. However, there are trade-offs to consider, as the company would need to consider whether they retain full ownership and control of their event data and any user data that may be associated with those events. In addition, additional developer time and expertise would be needed to ensure that event data is properly sent to the A/B testing platform.
 
 ---
 
