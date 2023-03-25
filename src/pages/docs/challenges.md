@@ -15,7 +15,7 @@ For example, imagine you are testing a new feature for a social media platform t
 
 However, if users are able to switch between the control and treatment groups or see different versions of the new feature at different times, then the results of the experiment may be biased and difficult to interpret. In this case, you would want to make sure that each user is consistently assigned to either the control or treatment group throughout the duration of the experiment.
 
-A/B testing platforms need to be able to accomodate the assignment needs for an application, whether than means **random** assignment, consistent assignment by **session**, or even consistent assignment based on an individual **user**.
+A/B testing platforms need to be able to accommodate the assignment needs for an application, whether than means **random** assignment, consistent assignment by **session**, or even consistent assignment based on an individual **user**.
 
 ### Developer Involvement
 
