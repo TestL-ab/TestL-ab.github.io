@@ -9,7 +9,9 @@ description: Test Lab introduction and use case.
 
 > **Test Lab is an open-source, self-hosted feature flagging and A/B testing platform.**
 
-Test Lab provides a feature management infrastructure that allows a developer to create feature toggles, rollouts, and experiments, with native SDKs to evaluate features and allow rendering of distinct variants. **Toggles** and **Rollouts** are features that are active or inactive for either **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
+Test Lab provides a feature management infrastructure that allows a developer to create feature toggles, rollouts, and experiments, with native SDKs to evaluate features and allow rendering of distinct variants.
+
+**Toggles** and **Rollouts** are features that are active or inactive for either **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
 
 Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior.
 

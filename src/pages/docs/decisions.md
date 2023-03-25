@@ -17,7 +17,7 @@ All of these elements are especially important for Test Lab’s core use case, w
 
 ## Database Type
 
-An early design decision was which type of database to use to store the Test Lab feature configurations, users, and event data. We considered using a SQL database, a noSQL database like MongoDB, or even a time series database specifically for the event data.
+An early design decision we made was which type of database to use to store the Test Lab feature configurations, users, and event data. We considered using a SQL database, a noSQL database like MongoDB, and even a time series database specifically for the event data.
 
 Ultimately, we chose to use PostgreSQL to store data for the Test Lab A/B testing platform for a few key reasons:
 
@@ -31,6 +31,6 @@ Ultimately, we chose to use PostgreSQL to store data for the Test Lab A/B testin
 
 When designing our Test Lab backend server, we had to determine whether we wanted to force users to interact with the API solely through the Admin UI or whether we also wanted to provide direct API access as well. Keeping with our theme of **flexibility**, we decided to offer direct API access in addition to our Admin UI.
 
-A downside of this choice is that we do not yet have all of the validation built into the backend server that we have in the Admin UI. We do enforce that the format of created and updated features, variants, users, and events are correct whether the action came from the Admin UI or direct API access. However, there are some validation features present in the Admin UI that do not currently carry over to the backend server, including ensuring that no more than 100% of the user base is enrolled in an experiment over a given time period. In addition, a developer could use the API to incorrectly add variants to rollout or toggle features, even though that functionality is limited to experiments.
+A downside of this choice is that we do not yet have all of the validation built into the backend server that we have in the Admin UI. We do enforce that the format of created and updated features, variants, users, and events are correct whether the action came from the Admin UI or direct API access. However, there is a key validation feature present in the Admin UI that does not currently carry over to the backend server - ensuring that no more than 100% of the user base is enrolled in an experiment over a given time period.
 
 Overall, we felt that the flexibility of allowing developers to interact with the API in the way that is most helpful for their application outweighed the potention downsides of the developer using the API endpoints incorrectly. As a way to mitigate this risk, we provide [extensive API documentation](/docs/api-docs) to help guide the correct use of the Test Lab routes.

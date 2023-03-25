@@ -28,7 +28,9 @@ Learn more about Test Lab and how it can help you make better design decisions t
 
 > **Test Lab is an open-source, self-hosted feature flagging and A/B testing platform.**
 
-Test Lab provides **feature management** infrastructure for the creation of feature toggles, rollouts, and experiments, with **native SDKs** to evaluate features and allow rendering of distinct variants. **Toggles** and **Rollouts** are features that are active or inactive for either **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
+Test Lab provides **feature management** infrastructure for the creation of feature toggles, rollouts, and experiments, with **native SDKs** to evaluate features and allow rendering of distinct variants.
+
+**Toggles** and **Rollouts** are features that are active or inactive for either **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
 
 Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior. Test Lab is Dockerized and can be deployed on your localhost, virtual private server, or AWS Elastic Container Service with one simple command.
 
@@ -43,6 +45,6 @@ This case study explores key decisions made when designing and implementing the 
 
 - Architectural decisions regarding Test Lab [hosting](/docs/decisions#managed-versus-self-hosted), [database](/docs/decisions#database-type) type, and [API access](/docs/decisions#api-access)
 
-* Design decisions relating to the ["stickiness"](/docs/functional-decisions#"stickiness"-of-the-user-experience) of the user experience, limiting users to one concurrent experiment with [user-blocks](/docs/functional-decisions#limiting-users-to-one-concurrent-experiment), the [granularity](/docs/functional-decisions#granularity-of-user-blocks) of user-blocks, and using [polling](/docs/functional-decisions#polling-to-retrieve-updated-feature-data) to retrieve updated feature data
+* Design decisions relating to the [consistency](/docs/functional-decisions#consistency-of-the-user-experience) of the user experience, limiting users to one concurrent experiment with [user-blocks](/docs/functional-decisions#limiting-users-to-one-concurrent-experiment), the [granularity](/docs/functional-decisions#granularity-of-user-blocks) of user-blocks, and using [polling](/docs/functional-decisions#polling-to-retrieve-updated-feature-data) to retrieve updated feature data
 
 Test Lab includes a full [test suite](/docs/testing) on its backend server as well as documentation on [installation](/docs/installation), [APIs](/docs/api-docs), and [SDKs](/docs/sdk-docs).

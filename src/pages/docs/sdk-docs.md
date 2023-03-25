@@ -116,7 +116,7 @@ When the client is initialized, it will be provided with a default context, whic
 
 The **context** is used to determine the value of experiment variants for a given user, so you can overwrite this context with a different `user_id` and/or `ip` property using the `update_context` method. Note that if either the **`user_id`** or **`ip`** property is not provided in the context object, then the default value will be retained.
 
-```ruby
+```js
 configure do
   set :client, Config.new("#{server_url}", interval).connect
 end
@@ -129,7 +129,7 @@ end
 
 When you need to determine whether a feature is enabled for a particular user (and, if applicable, the variant value), use the `get_feature_value` method, where **`name_of_experiment`** is the name given to the experiment when it was created.
 
-```ruby
+```js
 @feature = @client.get_feature_value("name_of_experiment")
 ```
 
@@ -192,9 +192,9 @@ return render_template('home.html', value=color)
 
 ## Event Tracking
 
-Note that a user will need to make a `post` call with event information (`user_id` and `variant_id`) whenever an event occurs that they want to record in the experiment. See [API docs on creating events](/docs/api-docs#create-events) for more information.
+Note that a user will need to make a `POST` call with event information (`user_id` and `variant_id`) whenever an event occurs that they want to record in the experiment. See [API docs on creating events](/docs/api-docs#create-events) for more information.
 
-TestLab can only capture data for a single event type per experiment, but you can send data for any type of event that you want to measure as long as the **`post`** payload is an object that contains the **`user_id`** and **`variant_id`** properties.
+TestLab can only capture data for a single event type per experiment, but you can send data for any type of event that you want to measure as long as the `POST` payload is an object that contains the `user_id` and `variant_id` properties.
 
 _javascript example_:
 

@@ -18,7 +18,7 @@ The Test Lab backend server offers routes to manage features, experiment variant
 
 ### Create a feature
 
-Method: post
+Method: `POST`
 
 Route: `/api/feature`
 
@@ -74,7 +74,7 @@ Note that if you create an experiment (type `3` feature) using the Test Lab api 
 
 ### Get all features
 
-Method: get
+Method: `GET`
 
 Route: `/api/feature`
 
@@ -128,7 +128,7 @@ Response body (error):
 
 ### Get current features
 
-Method: get
+Method: `GET`
 
 Route: `/api/feature/current`
 
@@ -292,7 +292,7 @@ Current features are features where the current date is between the `start_date`
 
 ### Get a Feature by ID
 
-Method: get
+Method: `GET`
 
 Route: `/api/feature/:id`
 
@@ -320,7 +320,7 @@ Response body (error):
 
 ### Update features
 
-Method: put
+Method: `PUT`
 
 Route: `/api/feature/:id`
 
@@ -376,7 +376,7 @@ Response body (error):
 
 ### Delete features
 
-Method: delete
+Method: `DELETE`
 
 Route: `/api/feature/:id`
 
@@ -398,7 +398,7 @@ Response body (error):
 
 ### Create Variants
 
-Method: post
+Method: `POST`
 
 Route: `/api/feature/:id/variants`
 
@@ -455,7 +455,7 @@ Variants must be provided with a minimum of a `feature_id` and `value` property.
 
 ### Get Variants
 
-Method: get
+Method: `GET`
 
 Route: `/api/feature/:id/variants`
 
@@ -498,7 +498,7 @@ Variants are automatically deleted when the experiment they are assigned to is d
 
 ### Create Events
 
-Method: post
+Method: `POST`
 
 Route: `/api/events`
 
@@ -528,7 +528,7 @@ This is the endpoint that a client application will use to send event data to th
 
 ### Get All Events
 
-Method: get
+Method: `GET`
 
 Route: `/api/events`
 
@@ -565,7 +565,7 @@ Response body (when no events exist):
 
 ### Get Events for a Specific Feature
 
-Method: get
+Method: `GET`
 
 Route: `/api/events/feature/:id`
 
@@ -616,7 +616,7 @@ There is no route provided to delete an event.
 
 ## Get Analysis
 
-Method: get
+Method: `GET`
 
 Route: `/api/analysis/feature/:id`
 
@@ -660,7 +660,7 @@ This endpoint returns an object with properties that represent variant-specific 
 
 ### Create User
 
-Method: post
+Method: `POST`
 
 Route: `/api/users`
 
@@ -696,7 +696,7 @@ The `id` property of the request body is a unique string to identify the user. T
 
 ### Get Users
 
-Method: get
+Method: `GET`
 
 Route: `/api/users`
 
@@ -719,7 +719,7 @@ There is no route available for updating a user.
 
 ### Delete Users
 
-Method: delete
+Method: `DELETE`
 
 Route: `/api/users/:id`
 
@@ -747,7 +747,7 @@ User-blocks are automatically updated and sent with the data in the route `"/api
 
 ### Get All User-blocks
 
-Method: get
+Method: `GET`
 
 Route: `/api/userblocks`
 
@@ -866,7 +866,7 @@ Response body (error):
 
 ### Get User-block by Block Name
 
-Method: get
+Method: `GET`
 
 Route: `/api/userblocks/:name`
 
@@ -888,7 +888,7 @@ Response body (error):
 
 ### Set User-block to Experiment
 
-Method: put
+Method: `PUT`
 
 Route: `/api/userblocks`
 
@@ -922,7 +922,7 @@ This API route is used to update the assignment of a user-block with a `name` to
 
 ### Reset User-blocks
 
-Method: put
+Method: `PUT`
 
 Route: `/api/userblocks/reset`
 

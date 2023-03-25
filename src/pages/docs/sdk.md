@@ -7,7 +7,7 @@ Test Lab provides native SDKs for [Node](/docs/sdk-docs#node-sdk), [React](/docs
 
 ## What does the SDK do?
 
-The SDK stores an _in-memory representation_ of the current configuration of features that could be available for a particular user. Because the SDK client caches all features and their current configuration in memory, it is very efficient to determine the value of a feature, as it is a function operating on a local state without the need to retrieve data from a database.
+The SDK stores an **in-memory representation** of the current configuration of features that could be available for a particular user. Because the SDK client caches all features and their current configuration in memory, it is very efficient to determine the value of a feature, as it is a function operating on a local state without the need to retrieve data from a database.
 
 When provided with a unique string to identify a user (stored as a `user_id`), the SDK client can determine the value of each feature for that user deterministically without making any additional API calls to the Test Lab backend server.
 
@@ -19,7 +19,7 @@ In order to evaluate a feature, the SDK considers several attributes of a featur
 
 1. Is the feature active or paused?
 2. Is the current date within the start and end date of the scheduled feature
-3. If the feature is a rollout or an experiment, what percent of users should be exposed to the feature?
+3. If the feature is a rollout or an experiment, what percentage of users should be exposed to the feature?
 4. If the feature is an experiment, is the experiment active for this particular user?
 5. If the experiment is active for this user, to which variant should the user be exposed?
 
@@ -27,7 +27,7 @@ In order to evaluate a feature, the SDK considers several attributes of a featur
 
 ## Toggle and rollout evaluation
 
-When evaluating whether a feature toggle is active for a particular user, the SDK checks whether the current date is within the start and end date for a particular toggle and whether the toggle is current active (i.e., not paused). If both of these are true, then the SDK returns `true` for this feature.
+When evaluating whether a feature toggle is active for a particular user, the SDK checks whether the current date is within the start and end date for a particular toggle and whether the toggle is currently active (i.e., not paused). If both of these are true, then the SDK returns `true` for this feature.
 
 For a rollout, the same initial checks on the date range and the active status of the rollout are performed. If either is false, then the SDK returns `false` for the feature. If both are true, then the SDK uses a **hashing function** to hash the **concatenated string of the `user_id` and the feature `name`** into a **value between 0 and 1**. If this value is less than or equal to the rollout percentage expressed as a decimal value, then the SDK returns `true` for this feature.
 
@@ -37,7 +37,7 @@ In other words, for a rollout percentage of 10%, the rollout would return `true`
 
 ### Why hash the concatenated string?
 
-It would be typical to wonder why we choose to hash the concatenated string of the `user_id` and the feature `name` instead of just hashing the `user_id`. After all, the `user_id` is already a unique string, right?
+It would be valid to question why we chose to hash the concatenated string of the `user_id` and the feature `name` instead of just hashing the `user_id`.
 
 We made the choice to hash the concatenated string because, in contrast to the experiment feature type described below, there is no constraint on the number of feature toggles that a user can be exposed to. However, we do want to make sure that users are uniformly distributed amongst active feature toggles.
 
@@ -55,7 +55,7 @@ By hashing the `user_id` concatenated to the feature `name` we ensure that the h
 
 ## Experiment evaluation
 
-When evaluating the value of an experiment feature, the Test Lab SDK starts with the standard checks of whether or not the feature is active and whether we are within the prescribed start and end dates of the experiment. If both are true, then the SDK uses the hashing function to hash the `user_id` to a value between 0 and 1. A user can be assigned to only one experiment at a time, so we do not need to worry about the overlapping issue addressed in the feature toggle discussion above.
+When evaluating the value of an experiment feature, Test Lab starts with the standard checks of whether or not the feature is active and whether we are within the prescribed start and end dates of the experiment. If both are true, then the SDK uses the hashing function to hash the `user_id` to a value between `0` and `1`. A user can be assigned to only one experiment at a time, so we do not need to worry about the overlapping issue addressed in the feature toggle discussion above.
 
 ### User-blocks
 
@@ -63,9 +63,9 @@ Our solution for ensuring that users are assigned to no more than one experiment
 
 ![Alt Text](/images/userBlocks-updated.png)
 
-The concept of user-blocks is critical for understanding the evaluation of experiment features by the SDK, as the Test Lab assignment logic hashes the `user_id` to a value between 0 and 1, then matches that hashed value to a particular user-block. If the hashed value is 0.54, it would be matched to the user-block that represents the 50% - 55% range of users.
+The concept of user-blocks is critical for understanding the evaluation of experiment features by the SDK, as the Test Lab assignment logic hashes the `user_id` to a value between `0` and `1`, then matches that hashed value to a particular user-block. If the hashed value is `0.54`, it would be matched to the user-block that represents the 50% - 55% range of users.
 
-Once a user-block has been identified, the SDK checks whether or not that user-block is active for this particular experiment. If it is, then it returns a variant based on the hashed value and the weight of the variants for this particular experiment. For example, in our example where the `user_id` has a hashed value of 0.54, and the 50% - 55% user-block is active for our experiment, then we would look to the distribution of variants to determine which variant to serve the user.
+Once a user-block has been identified, the SDK checks whether or not that user-block is active for this particular experiment. If it is, then it returns a variant based on the hashed value and the weight of the variants for this particular experiment. For example, in our example where the `user_id` has a hashed value of `0.54`, and the 50% - 55% user-block is active for our experiment, then we would look to the distribution of variants to determine which variant to serve the user.
 
 ![Alt Text](/images/variantAssignment-updated.png)
 
@@ -85,4 +85,4 @@ The first time that the SDK client fetches feature configurations, it makes a re
 
 Once the initial fetch is complete, the SDK client sends subsequent requests at the specified intervals with a `If-Modified-Since` header. The Test Lab backend server keeps track of the last time feature data was modified, and it simply returns a `304 Not Modified` status if no changes have been made since the last request. If changes have been made, then the updated feature configuration data is returned, and the in-memory representation of the feature configuration is updated by the SDK.
 
-![Alt Text](/images/Polling-dark.jpg)
+![Alt Text](/images/Polling-dark.png)

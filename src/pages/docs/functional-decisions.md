@@ -3,21 +3,27 @@ title: Design Decisions
 description: Key decisions made when developing the Test Lab functionality.
 ---
 
-## "Stickiness" of the user experience
+## Consistency of the user experience
 
-Most A/B testing platforms incorporate some form of “stickiness” into the logic that assigns a particular user or request to a particular feature or experience. This ensures that a particular user continues to experience the same variant across multiple requests. But what you want to “stick” to may depend on the type of application and the type of feature that you’re testing.
+Most A/B testing platforms incorporate some form of **context** into the logic that assigns a particular user or request to a particular feature or experience. This ensures that a particular user continues to experience the same variant across multiple requests. But what context you want to provide may depend on the type of application and the type of feature that you are testing.
 
-Some applications may want every request to be treated as a new user that could be offered a new experience. Some applications may want all requests associated with a particular session to be treated as the same user and offered the same feature or experience. And others may want to use other characteristics such as an email address or other unique characteristic to determine which feature a user is offered.
+For example, when you are testing a feature that is not dependent on user identity or behavior, such as the color of a button or the placement of a banner on a website, it may be appropriate to randomly assign users to the control or treatment group on each page load or request. This helps to ensure that the results are not affected by any systematic differences between users.
+
+On the other hand, when you are testing a feature that is dependent on user behavior during a single session, such as the effectiveness of a product recommendation algorithm, it may be important to ensure that the user receives the same variant throughout their session. This helps to ensure that the user's behavior is consistent across the control and treatment groups, and that any differences in behavior can be attributed to the feature being tested.
+
+Finally, when you are testing a feature that is dependent on user identity or behavior over time, such as the effectiveness of a personalized email marketing campaign, it may be appropriate to tie the variant to a particular email address or user ID. This helps to ensure that the user receives the same variant each time they interact with the product or service, and that any differences in behavior can be attributed to the feature being tested rather than user variability.
 
 Throughout the Test Lab design process, the goal was **flexibility**. In the interest of flexibility, we introduce the `user_id` as part of the [SDK](/docs/sdk-docs) client’s `context` to allow the developer to specify what they want to use to assign a particular experience to a user. As part of the client instantiation process, a default `context` is assigned, which includes a unique UUID assigned to the `user_id` property and the IP address of the incoming request assigned to the `ip` property of the `context`.
 
-If the developer wants this randomly generated UUID to be used to evaluate the feature(s) for the request, then the default context can be used. Otherwise, the developer has the opportunity to update the `context` using the `update_context` method, passing a new value to the `user_id` and/or `ip` properties. The value that is assigned to the `user_id` is then used to evaluate the feature. Since the assignment logic is deterministic, every time a feature is evaluated with a particular `user_id`, it will return the same value. So the value chosen for the `user_id` will determine what the feature “sticks” to in the application.
+If the developer wants this randomly generated UUID to be used to evaluate the feature(s) for the request, then the default context can be used. Otherwise, the developer has the opportunity to update the `context` using the `update_context` method, passing a new value to the `user_id` and/or `ip` properties. As long as it is a unique string, the `user_id` can represent a random value, a session identifier, or any other identifier that meets the needs of the experiment.
+
+The value that is assigned to the `user_id` is then used to evaluate the feature. Since the assignment logic is deterministic, every time a feature is evaluated with a particular `user_id`, it will return the same value. So the value chosen for the `user_id` will determine the feature assignment in the application.
 
 ---
 
 ## Limiting users to one concurrent experiment
 
-At its core, Test Lab is an experimentation platform, and the team wanted to ensure that data would not be compromised by running concurrent experiments on a single user. For example, if a user were exposed to one variant of Experiment A and another variant of Experiment B, then how would be be able to determine if a user’s behavior was due to exposure to Experiment A, Experiment B, or some combination of the two?
+At its core, Test Lab is an experimentation platform, and we wanted to ensure that data would not be compromised by running concurrent experiments on a single user. For example, if a user were exposed to one variant of Experiment A and another variant of Experiment B, then how would be be able to determine if a user’s behavior was due to exposure to Experiment A, Experiment B, or some combination of the two?
 
 ### One approach: multivariate analysis
 
@@ -27,12 +33,12 @@ Once the experiments have been conducted and the data has been collected, statis
 
 While multivariate analysis can be a powerful tool for determining the individual effects of different variables in A/B testing, there are also some downsides to consider:
 
-1. Increased complexity: Multivariate analysis can be more complex than simpler A/B testing methods, as it involves analyzing the effects of multiple variables simultaneously. This can make it more difficult to interpret the results and identify the most effective combinations of variables.
+1. Increased complexity: Multivariate analysis will most likely be more complex than simpler A/B testing methods, as it involves analyzing the effects of multiple variables simultaneously. This can make it more difficult to interpret the results and identify the most effective combinations of variables.
 2. Increased sample size requirements: Because multivariate analysis involves testing multiple variables simultaneously, it typically requires a larger sample size than simpler A/B testing methods. This can increase the time and resources required to conduct experiments and may make it more difficult to obtain statistically significant results.
 3. Increased risk of false positives: Multivariate analysis can increase the risk of false positives, as the more variables that are tested, the greater the likelihood of finding statistically significant results by chance. This can make it more difficult to determine which variables are truly having an impact on the outcome of the experiment.
 4. Increased risk of overfitting: Multivariate analysis can also increase the risk of overfitting, as the more variables that are tested, the greater the risk of finding a combination of variables that performs well on the test data but does not generalize well to new data. This can lead to inaccurate or misleading results.
 
-In short, **while multivariate analysis is a perfectly reasonable approach for applications with very large user bases that provide sufficient power to tease out multivariate effects, it is less likely to be a good fit for a platform like Test Lab** that is tailored to meet the needs of applications with a more modest user base.
+In short, **while multivariate analysis is a perfectly reasonable approach for applications with very large user bases that provide sufficient power to tease out multivariate effects, it is less likely to be a good fit for a platform like Test Lab** that is tailored to meet the needs of applications with a more modest-sized user base.
 
 ### Test Lab approach: [user-blocks](/docs/sdk#user-blocks)
 
@@ -44,9 +50,9 @@ Next, when the SDK polls the Test Lab backend server for feature configuration, 
 
 ## Granularity of user-blocks
 
-As described in the last section, the current implementation of Test Lab allows users to be assigned to no more than one experiment at a time. In other words, no more than 100% of the user-base can be allocated to experiments at any point in time.
+As described in the last section, Test Lab allows users to be assigned to no more than one experiment at a time. In other words, no more than 100% of the user-base can be allocated to experiments at any point in time.
 
-When creating or updating experiments, the [Admin UI](/docs/admin-ui) evaluates the **minimum** percent of the user-base that is available throughout the duration of the experiment, and that is the **maximum** percent that can be enrolled in a new or updated experiment. This ensures that the user-base is limited to no more than one-experiment per user.
+When creating or updating experiments, the [Admin UI](/docs/admin-ui) evaluates the **minimum** percentage of the user-base that is available throughout the duration of the experiment, and that is the **maximum** percentage that can be enrolled in a new or updated experiment. This ensures that the user-base is limited to no more than one experiment per user.
 
 One decision we made was to allocate users to experiments in 5% blocks.
 
@@ -54,7 +60,7 @@ One decision we made was to allocate users to experiments in 5% blocks.
 
 The use case for Test Lab is **smaller applications that are just getting started with A/B testing**, and our current assumption is that these applications would have a relatively small user base. It is possible that experiments could take a long time to reach statistical significance, even with enrolling 5% of users in a particular experiment. If we allowed for the creation of experiments with as few as 1% of users enrolled, it could be very difficult to obtain meaningful data unless the effect size were very large.
 
-Therefore, as a starting point, we decided that 5% was a reasonable minimum of the user-base to enroll in an experiment. This still allows for up to 20 concurrent experiments, which seems more than sufficient for a typical Test Lab user. If we were to find that users were expecting higher-than-expected traffic that could support even more concurrent experiments, then we could certainly update our logic to allow for more granular user-blocks.
+Therefore, as a starting point, we decided that 5% was a reasonable minimum of the user-base to enroll in an experiment. This still allows for up to 20 concurrent experiments, which seems more than sufficient for a typical Test Lab user. If we were to find that users were expecting higher-than-expected traffic that could support even more concurrent experiments, then, in the future, we could certainly update our logic to allow for more granular user-blocks.
 
 ---
 

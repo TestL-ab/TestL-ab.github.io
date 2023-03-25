@@ -5,7 +5,7 @@ description: Places where we would like to take Test Lab.
 
 ## Increasing granularity of user-blocks
 
-In previous discussion, we explained our [logic](/docs/functional-decisions#granularity-of-user-blocks) for segmenting the **user-blocks** into 5% chunks. If we find that Test Lab users are experiencing application use that warrants more granular user-blocks, then there could be value in offering smaller chunks of **user-blocks**. One option would be to offer additional routes in the backend server that would allow the user to choose from a range of user-block sizes when they use the [SDK](/docs/sdk/user-blocks) or [API](/docs/api-docs).
+In the previous discussion, we explained our [logic](/docs/functional-decisions#granularity-of-user-blocks) for segmenting the **user-blocks** into 5% chunks. If we find that Test Lab users are experiencing application use that warrants more granular user-blocks, then there could be value in offering smaller chunks of **user-blocks**. One option would be to offer additional routes in the backend server that would allow the user to choose from a range of user-block sizes when they use the [SDK](/docs/sdk/user-blocks) or [API](/docs/api-docs).
 
 ---
 
@@ -30,10 +30,9 @@ In addition, once some measure of statistical significance is in place, we belie
 Additional functionality currently on our roadmap includes:
 
 - Offering additional analytics in the visualizer portion of the Admin UI
-- Additional error handling in the backend server to cover cases that are currently handled in the Admin UI but not when accessing the APIs directly
+- Additional error handling on the backend server to cover cases that are currently handled in the Admin UI but not when accessing the APIs directly
 - Bolstering the testing suite for the Admin UI
 - Using past features as templates for generating new features
-- Allowing clients to specify users or groups to always include or never include in certain features
 - Tracking of multiple event types for a single experiment
 - Tool to predict the required sample sizes needed to achieve a statistically significant result for an experiment
 - An option in the Admin UI to download raw data directly, instead of accessing it through the API

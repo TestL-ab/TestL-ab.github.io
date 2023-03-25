@@ -7,9 +7,9 @@ description: A snapshot of the current A/B Testing landscape.
 
 ## A/B Testing Landscape
 
-Existing solutions for A/B testing run the gamut from bare-bones apps exposing APIs for creating and retrieving experiments from the command line to What You See Is What You Get (WYSIWYG) options for performing A/B testing on client-side-rendered applications with no developer expertise needed (e.g., VWO) to full featured A/B testing solutions that offer exposed APIs as well as SDKs for both server-side and client-side rendered applications that require developer expertise.
+Existing solutions for A/B testing run the gamut. There are bare-bones apps exposing APIs for creating and retrieving experiments from the command line. In addition, there are many What You See Is What You Get (WYSIWYG) options for performing A/B testing on client-side-rendered applications that can be used with limited developer expertise (e.g., VWO). At the other end of the spectrum are full featured A/B testing solutions that offer exposed APIs as well as SDKs for both server-side and client-side rendered applications that require significant developer expertise.
 
-Options for A/B testing in the “middle-of-the-road” (i.e., solutions that are open source with self-hosting options) are relatively sparse – applications that look promising either fade away and have little to no development or engagement over time or they become fully-featured enterprise options that offer only expensive, managed solutions (e.g., LaunchDarkly, Optimizely).
+Options for A/B testing in the “middle-of-the-road” (i.e., solutions that are open source with self-hosting options) are relatively few – applications that look promising either fade away and have little to no development or engagement over time or they become fully-featured enterprise options that offer only expensive, managed solutions (e.g., LaunchDarkly, Optimizely).
 
 ---
 
@@ -26,7 +26,7 @@ Options for A/B testing in the “middle-of-the-road” (i.e., solutions that ar
 |    Client- or Server-Side    |  Client  | Client |    Both    |     Both     |          Both          |
 |             SDKs             |    No    |   No   |    Yes     |     Yes      |          Yes           |
 |             APIs             |    No    |   No   |    Some    |     Yes      |          Yes           |
-|    GUI for Test Creating     |   Yes    |  Yes   |    Yes     |     Yes      | Pro or Enterprise Plan |
+|    GUI for Test Creation     |   Yes    |  Yes   |    Yes     |     Yes      | Pro or Enterprise Plan |
 |  GUI for Data Visualization  |   Yes    |  Yes   |    Yes     |      No      | Pro or Enterprise Plan |
 |         Open-Source          |    No    |   No   |    Yes     |     Yes      |           No           |
 
