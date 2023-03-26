@@ -15,7 +15,7 @@ For example, imagine you are testing a new feature for a social media platform t
 
 However, if users are able to switch between the control and treatment groups or see different versions of the new feature at different times, then the results of the experiment may be biased and difficult to interpret. In this case, you would want to make sure that each user is consistently assigned to either the control or treatment group throughout the duration of the experiment.
 
-A/B testing platforms need to be able to accommodate the assignment needs for an application, whether than means **random** assignment, consistent assignment by **session**, or even consistent assignment based on an individual **user**.
+A/B testing platforms need to be able to accommodate the assignment needs of an application, whether than means **random** assignment, consistent assignment by **session**, or even consistent assignment based on an individual **user**.
 
 ### Developer Involvement
 
@@ -27,11 +27,11 @@ Although this is certainly a straightforward solution, it only works for **clien
 
 ### Collecting Event Data
 
-In order to evaluate the results of an A/B test, you need to collect some form of event data. As you will see in the next section, many A/B testing platforms including Firebase, GrowthBook, and Unleash rely on data already being collected through services such as Google Analytics.
+In order to evaluate the results of an A/B test, you need to collect some form of event data. As you will see in the next section, many A/B testing platforms, including Firebase, GrowthBook, and Unleash, rely on data already being collected through services such as Google Analytics.
 
-However, this can be a challenge if a company is not already collecting event data for its application. Companies that are just getting started in A/B testing may not have a preferred analytics platform, and they may not be collecting their own event data (or may not be collecting it in such a way that it is amenable to A/B testing).
+However, this can pose a challenge to companies that are just getting started in A/B testing, as they may not have a preferred analytics platform. They may not even be collecting their own event data, or they may not be collecting it in a way that it is amenable to A/B testing.
 
-An option in this situation is to use an A/B testing platform that also collects and stores event data. However, there are trade-offs to consider, as the company would need to consider whether they retain full ownership and control of their event data and any user data that may be associated with those events. In addition, additional developer time and expertise would be needed to ensure that event data is properly sent to the A/B testing platform.
+An option in this situation is to use an A/B testing platform that also collects and stores event data. However, there are trade-offs to consider, as the company would need to determine whether they retain full ownership and control of their event data and any user data that may be associated with those events. In addition, additional developer time and expertise would be needed to ensure that event data is properly sent to the A/B testing platform.
 
 ---
 
@@ -41,18 +41,18 @@ In addition to engineering challenges, there are also a number of statistical ch
 
 ### Extracting the Impact of a Single Variation
 
-First, if a user is presented with multiple variations at the same time, it can be extremely challenging to determine which specific variant or aspect of the experience was really influencing user behavior. Multivariate analysis is one solution, where multiple variations of different elements on a web page, such as headlines, images, and call-to-action buttons, are tested simultaneously to determine which combination of elements is most effective in achieving a specific goal.
+First, if a user is presented with multiple variations of a website or application at the same time, it can be extremely challenging to determine which specific variant or aspect of the experience was really influencing user behavior. Multivariate analysis is one solution, where multiple variations of different elements on a web page, such as headlines, images, and call-to-action buttons, are tested simultaneously to determine which combination of elements is most effective in achieving a specific goal.
 
 One of the main challenges of multivariate testing is the need for a large sample size to achieve statistical significance. Testing multiple variations simultaneously can quickly multiply the number of possible combinations, requiring a larger sample size to ensure that each variation is tested with a sufficient number of users. As a result, multivariate testing can be more resource-intensive and time-consuming than testing of a single variation at a time.
 
 Another challenge is the complexity of analyzing the data. In traditional A/B testing, it is relatively straightforward to determine which variation is most effective by comparing the conversion rates of the control group and treatment group. In multivariate testing, however, there are many different combinations of variations to consider, making it more difficult to isolate the impact of a single variation. As a result, multivariate testing often requires more complex statistical analysis to tease out the effect of each variation.
 
-One way to overcome these challenges is to use a sequential testing approach, where variations are tested one at a time instead of all at once. This approach allows you to test each variation with a smaller sample size, reducing the overall sample size needed and making it easier to analyze the data. Sequential testing can also help you identify which variations have the most impact on user behavior, allowing you to focus on testing those variations more thoroughly.
+One way to overcome these challenges is to use a sequential testing approach, where variations are tested one at a time instead of all at once. This approach allows you to test each variation with a smaller sample, reducing the overall sample size needed and making it easier to analyze the data. Sequential testing can also help you identify which variations have the most impact on user behavior, allowing you to focus on testing those variations more thoroughly.
 
 ### Power to Detect Small Effects
 
-Another major challenge in A/B testing is the need to have enough data to accurately measure the impact of changes to your website or application. If you are testing a large number of variants or the effect of each variant on user behavior is small, it could take a long time to generate enough data to see a statistically significant impact. This can be especially difficult for websites or applications with low traffic, where it may take a very long time to gather enough data to make an informed decision.
+Another major challenge in A/B testing is the need to have enough data to accurately measure the impact of changes to your website or application. If you are testing a large number of variants or the effect of each variant on user behavior is small, it could require a lengthy experiment to generate enough data to see a statistically significant impact. This can be especially difficult for websites or applications with low traffic, where it may take a very long time to gather enough data to make an informed decision.
 
-A sample size that is too small can lead to unreliable results, as it may not accurately represent the behavior of your user population as a whole. Additionally, if the users in your test group are not representative of your overall user base, you may not be able to generalize the results to your entire user population.
+A sample size that is too small can lead to unreliable results, as it may not accurately represent the behavior of your user population as a whole. Additionally, if the users in your test group are not representative of your overall user base, you may not be able to generalize the results to your entire user population. Ensuring that your A/B tests have enough statistical power to accurately measure the impact of changes to your website or application is critical to making informed decisions about the user experience.
 
-Ensuring that your A/B tests have enough statistical power to accurately measure the impact of changes to your website or application is critical to making informed decisions about your user experience. Some applications limit the display of experiment results to those where statistical significance is reached. This is a reasonable choice, as it makes sense to ensure that results are rigorous and statistically significant before implementing a change to your application. However, it it is limiting for those applications where the user base or the expected effect size is small.
+Some applications limit the display of experiment results to those where results are statistically significant. This is a reasonable choice, as it makes sense to ensure that results are meaningful before implementing a change to your application. However, it it is limiting for those applications where the user base or the expected effect size is small, where statistical significance may not be reached.
