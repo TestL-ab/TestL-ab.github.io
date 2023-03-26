@@ -13,7 +13,9 @@ Test Lab provides a feature management infrastructure that allows a developer to
 
 **Toggles** and **Rollouts** are features that are active or inactive for either **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
 
-Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior. Test Lab is Dockerized and can be deployed on your localhost, virtual private server, or AWS Elastic Container Service with one simple command.
+Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior.
+
+Test Lab is Dockerized and can be deployed on your localhost, virtual private server, or AWS Elastic Container Service with one simple command.
 
 This case study will walk you through an introduction to A/B testing, a description of how Test Lab fits into the landscape of A/B testing options, and an exploration of the engineering decisions that we addressed while building the Test Lab application.
 
