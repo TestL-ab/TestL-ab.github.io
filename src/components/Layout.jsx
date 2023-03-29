@@ -40,7 +40,6 @@ const navigation = [
   {
     title: 'A/B Testing',
     links: [
-      { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
       { title: 'Problem Definition', href: '/docs/problem-overview' },
       {
         title: 'A/B Testing Landscape',
@@ -66,6 +65,7 @@ const navigation = [
         title: 'Existing Solutions',
         href: '/docs/existing-solutions',
       },
+      { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
     ],
   },
   {
