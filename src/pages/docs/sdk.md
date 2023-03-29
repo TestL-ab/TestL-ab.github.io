@@ -5,6 +5,8 @@ description: A walkthrough of Test Lab's SDKs and the functionality they provide
 
 Test Lab provides native SDKs for [Node](/docs/sdk-docs#node-sdk), [React](/docs/sdk-docs#react-sdk), [Ruby](/docs/sdk-docs#ruby-sdk), and [Python](/docs/sdk-docs#python-sdk). Instructions for using the SDKs can be found in the [SDK documentation](/docs/sdk-docs).
 
+---
+
 ## What does the SDK do?
 
 The SDK stores an **in-memory representation** of the current configuration of features that could be available for a particular user. Because the SDK client caches all features and their current configuration in memory, it is very efficient to determine the value of a feature, as it is a function operating on a local state without the need to retrieve data from a database.

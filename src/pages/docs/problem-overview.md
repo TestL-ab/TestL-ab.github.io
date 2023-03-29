@@ -3,6 +3,8 @@ title: Problem Overview
 description: An overview of the problem addressed by A/B testing
 ---
 
+---
+
 ## Tailoring an application can increase preferred user behavior
 
 Companies face the ongoing challenge of presenting an application that is most effective in achieving a desired outcome. This outcome can be anything from increasing sales, improving click-through rates, or enhancing user engagement. The desired outcome is often reported as a **conversion rate**, which is a metric used to measure the percentage of website visitors or users who take a desired action, such as making a purchase, filling out a form, or signing up for a newsletter.

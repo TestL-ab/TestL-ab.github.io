@@ -3,6 +3,8 @@ title: Future Work
 description: Places where we would like to take Test Lab.
 ---
 
+---
+
 ## Increasing granularity of user-blocks
 
 In the previous discussion, we explained our [logic](/docs/functional-decisions#granularity-of-user-blocks) for segmenting the **user-blocks** into 5% chunks. If we find that Test Lab users are experiencing application use that warrants more granular user-blocks, then there could be value in offering smaller chunks of **user-blocks**. One option would be to offer additional routes in the backend server that would allow the user to choose from a range of user-block sizes when they use the [SDK](/docs/sdk/user-blocks) or [API](/docs/api-docs).

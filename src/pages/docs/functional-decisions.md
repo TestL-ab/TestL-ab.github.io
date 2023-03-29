@@ -3,6 +3,8 @@ title: Design Decisions
 description: Key decisions made when developing the Test Lab functionality.
 ---
 
+---
+
 ## Consistency of the user experience
 
 Most A/B testing platforms incorporate some form of **context** into the logic that assigns a particular user or request to a particular feature or experience. This ensures that a particular user continues to experience the same variant across multiple requests. But what context you want to provide may depend on the type of application and the type of feature that you are testing.
