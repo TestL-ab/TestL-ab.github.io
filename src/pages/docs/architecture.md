@@ -16,4 +16,4 @@ The Test Lab A/B Testing and Feature Flagging Platform consists of four key comp
 3. A PostgreSQL [database](/docs/database) for persisting data that defines the features, the [blocks of the user base](<(/docs/sdk#user-blocks)>) allocated to each experiment, and event data for experiment analytics
 4. Native [SDKs](/docs/sdk) for Node.js, React, Ruby, and Python for communicating directly with the Test Lab API and allocating individual requests to the appropriate feature(s)
 
-![Alt Text](/images/Architecture.png)
+![Alt Text](/images/Architecture2.png)
