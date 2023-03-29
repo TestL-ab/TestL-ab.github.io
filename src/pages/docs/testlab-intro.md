@@ -17,8 +17,6 @@ Test Lab allows for **event capture** and analytics to visualize the outcome of 
 
 Test Lab is Dockerized and can be deployed on your virtual private server or AWS Elastic Container Service with one simple command.
 
-The rest of this case study will walk you through the Test Lab architecture and and an exploration of the engineering decisions that we addressed while building the Test Lab application.
-
 ---
 
 ## Test Lab Use Case
@@ -28,3 +26,5 @@ As you saw in the previous sections, there are a range of A/B testing and featur
 We think that Test Lab is a great choice for small to mid-sized companies that have at least one developer on their team. These companies might be reluctant to give other providers access to their data and would prefer a self-hosted solution, and they may be looking for easy deployment to their virtual private servers. This company may be experiencing enough growth to be interested in making data-driven decisions, but they are not yet collecting their own event data. In essence, they are looking for **flexibility**, but they do not have the resources to build their own A/B testing solution from scratch.
 
 **That's where Test Lab comes in.**
+
+> The rest of this case study will walk you through the Test Lab architecture and and an exploration of the engineering decisions that we addressed while building the Test Lab application.
