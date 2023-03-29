@@ -40,7 +40,7 @@ const navigation = [
   {
     title: 'A/B Testing',
     links: [
-      { title: 'Problem Definition', href: '/docs/problem-overview' },
+      { title: 'Problem Overview', href: '/docs/problem-overview' },
       {
         title: 'A/B Testing Landscape',
         href: '/docs/ab-testing-overview',
