@@ -31,3 +31,5 @@ Options for A/B testing in the “middle-of-the-road” (i.e., solutions that ar
 |         Open-Source          |    No    |   No   |    Yes     |     Yes      |           No           |
 
 Within the limited, self-hosted category, two key options are Unleash and GrowthBook, both of which offer rich documentation and API access, with open-source deployment options. These solutions inspired some of the key features and functionality of Test Lab.
+
+![Test Lab Comparison](/images/Test-Lab-Comparison.png)

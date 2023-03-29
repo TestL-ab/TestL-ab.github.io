@@ -41,8 +41,9 @@ const navigation = [
     title: 'A/B Testing',
     links: [
       { title: 'Test Lab Introduction', href: '/docs/testlab-intro' },
+      { title: 'Problem Definition', href: '/docs/problem-overview' },
       {
-        title: 'A/B Testing Overview',
+        title: 'A/B Testing Landscape',
         href: '/docs/ab-testing-overview',
       },
       // {
@@ -100,6 +101,7 @@ const navigation = [
     title: 'Documentation',
     links: [
       { title: 'Installation', href: '/docs/installation' },
+      { title: 'Admin UI', href: '/docs/ui-docs' },
       { title: 'API Documentation', href: '/docs/api-docs' },
       { title: 'SDK Documentation', href: '/docs/sdk-docs' },
       { title: 'References', href: '/docs/references' },

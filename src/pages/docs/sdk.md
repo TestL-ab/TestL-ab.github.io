@@ -3,13 +3,25 @@ title: SDK
 description: A walkthrough of Test Lab's SDKs and the functionality they provide.
 ---
 
-Test Lab provides native SDKs for [Node](/docs/sdk-docs#node-sdk), [React](/docs/sdk-docs#react-sdk), [Ruby / Sinatra](/docs/sdk-docs#ruby-sdk), and [Python / Flask](/docs/sdk-docs#python-sdk). Instructions for using the SDKs can be found in the [SDK documentation](/docs/sdk-docs).
+Test Lab provides native SDKs for [Node](/docs/sdk-docs#node-sdk), [React](/docs/sdk-docs#react-sdk), [Ruby](/docs/sdk-docs#ruby-sdk), and [Python](/docs/sdk-docs#python-sdk). Instructions for using the SDKs can be found in the [SDK documentation](/docs/sdk-docs).
 
 ## What does the SDK do?
 
 The SDK stores an **in-memory representation** of the current configuration of features that could be available for a particular user. Because the SDK client caches all features and their current configuration in memory, it is very efficient to determine the value of a feature, as it is a function operating on a local state without the need to retrieve data from a database.
 
 When provided with a unique string to identify a user (stored as a `user_id`), the SDK client can determine the value of each feature for that user deterministically without making any additional API calls to the Test Lab backend server.
+
+---
+
+## How SDKs receive updated feature data
+
+Test Lab relies on SDKs fetching features in the background using polling at regular intervals. In a thread-based environment, this needs to be done in a separate thread. The poll interval is configurable in the SDK and will depend on how often feature updates are made.
+
+The first time that the SDK client fetches feature configurations, it makes a request to the Test Lab backend server, the server reaches out to the database to retrieve the current feature and user-block configuration, and the current configurations are returned to the SDK client with a `200 OK` status.
+
+Once the initial fetch is complete, the SDK client sends subsequent requests at the specified intervals with a `If-Modified-Since` header. The Test Lab backend server keeps track of the last time feature data was modified, and it simply returns a `304 Not Modified` status if no changes have been made since the last request. If changes have been made, then the updated feature configuration data is returned, and the in-memory representation of the feature configuration is updated by the SDK.
+
+![Alt Text](/images/Polling-dark.png)
 
 ---
 
@@ -76,13 +88,3 @@ Overall, the process that a Test Lab SDK uses to determine the value of an exper
 Variants that are returned by the Test Lab SDK include both a `value` and an `id` property. The `value` property is used by the developer to render the correct version of the feature for a user, and the `id` property is used (in conjunction with the `user_id`) to send event data to the Test Lab backend server for collection, analysis, and visualization in the Admin UI.
 
 ---
-
-## How SDKs receive updated feature data
-
-Test Lab relies on SDKs fetching features in the background using polling at regular intervals. In a thread-based environment, this needs to be done in a separate thread. The Test Lab recommendation is to use a poll interval of **15 seconds**, but this depends upon how often feature updates are made, and the interval is configurable in the SDK.
-
-The first time that the SDK client fetches feature configurations, it makes a request to the Test Lab backend server, the server reaches out to the database to retrieve the current feature and user-block configuration, and the current configurations are returned to the SDK client with a `200 OK` status.
-
-Once the initial fetch is complete, the SDK client sends subsequent requests at the specified intervals with a `If-Modified-Since` header. The Test Lab backend server keeps track of the last time feature data was modified, and it simply returns a `304 Not Modified` status if no changes have been made since the last request. If changes have been made, then the updated feature configuration data is returned, and the in-memory representation of the feature configuration is updated by the SDK.
-
-![Alt Text](/images/Polling-dark.png)

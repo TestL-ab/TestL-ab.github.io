@@ -3,7 +3,7 @@ title: Database
 description: A description of the Test Lab database.
 ---
 
-The Test Lab Database uses PostgreSQL to store persistent feature, user, user-block, and event data, including:
+Test Lab uses a PostgreSQL database to store persistent feature, user, user-block, and event data, including:
 
 - **Feature Configuration** data for toggle, rollout, and experiment features including a feature’s name, description, and the proportion of users enrolled
 - **Variant Configuration** data for experiments, including a variant’s name, value, and the proportion of users in a given experiment that will experience that variant

@@ -60,13 +60,19 @@ One decision we made was to allocate users to experiments in 5% blocks.
 
 The use case for Test Lab is **smaller applications that are just getting started with A/B testing**, and our current assumption is that these applications would have a relatively small user base. It is possible that experiments could take a long time to reach statistical significance, even with enrolling 5% of users in a particular experiment. If we allowed for the creation of experiments with as few as 1% of users enrolled, it could be very difficult to obtain meaningful data unless the effect size were very large.
 
-Therefore, as a starting point, we decided that 5% was a reasonable minimum of the user-base to enroll in an experiment. This still allows for up to 20 concurrent experiments, which seems more than sufficient for a typical Test Lab user. If we were to find that users were expecting higher-than-expected traffic that could support even more concurrent experiments, then, in the future, we could certainly update our logic to allow for more granular user-blocks.
+Therefore, as a starting point, we decided that 5% was a reasonable minimum of the user-base to enroll in an experiment. This still allows for up to 20 concurrent experiments, which seems more than sufficient for a typical Test Lab user. If users were expecting higher-than-expected traffic that could support even more concurrent experiments, then the logic could be updated to allow for more granular user-blocks.
 
 ---
 
 ## Polling to retrieve updated feature data
 
-The Test Lab team considered a number of options for ensuring that the in-memory representation of the feature configuration created by the SDK remains up to date as features change over time. Some options that were considered were websockets, server-sent events (SSEs), and polling.
+The Test Lab team considered a number of options for ensuring that the in-memory representation of the feature configuration created by the SDK remains up to date as features change over time, including:
+
+- **Polling**: a client-server communication technique where the client sends requests to the server at **intervals** to receive updates
+
+- **Server-sent events (SSEs)**: a **unidirectional**, server-initiated communication technique where the server sends updates to the client as soon as new data is available
+
+- **Websockets**: a **bidirectional**, real-time communication protocol that allows full-duplex communication between the client and server
 
 ![Alt Text](/images/pollingDecision-updated.png)
 

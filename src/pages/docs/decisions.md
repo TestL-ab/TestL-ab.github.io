@@ -5,7 +5,7 @@ description: Key decisions made when designing the Test Lab architecture.
 
 ## Managed versus Self-Hosted
 
-A/B testing platforms are generally fully managed and hosted by a third party or self-hosted on a private server. The Test Lab team opted to provide an open-source, self-hosted solution, which offers the opportunity for customization, complete control over data, and a lower cost.
+A/B testing platforms are generally fully managed and hosted by a third party or self-hosted on a private server. The Test Lab team opted to provide an open-source, self-hosted solution, which offers the opportunity for customization and complete control over data.
 
 1. Customization: With a self-hosted A/B testing platform like Test Lab, you have complete control over the platform and can customize it to fit your specific needs. This can be particularly useful if you have specific requirements that are not met by off-the-shelf A/B testing solutions but do not have sufficient resources to build an A/B testing platform completely in-house.
 2. Cost: While a self-hosted A/B testing platform may require more upfront investment in hardware and infrastructure, it can be more cost-effective in the long run than a fully managed and hosted option. With a self-hosted platform, you have more control over costs and can scale the platform as needed without incurring additional fees.
