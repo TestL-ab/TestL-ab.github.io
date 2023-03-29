@@ -17,7 +17,7 @@ Test Lab allows for **event capture** and analytics to visualize the outcome of 
 
 Test Lab is Dockerized and can be deployed on your virtual private server or AWS Elastic Container Service with one simple command.
 
-This case study will walk you through an introduction to A/B testing, a description of how Test Lab fits into the landscape of A/B testing options, and an exploration of the engineering decisions that we addressed while building the Test Lab application.
+The rest of this case study will walk you through the Test Lab architecture and and an exploration of the engineering decisions that we addressed while building the Test Lab application.
 
 ---
 
