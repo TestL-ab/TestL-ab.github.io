@@ -9,7 +9,7 @@ Test Lab is loosely modeled on the Unleash A/B testing platform, offering users 
 
 ## Components of Test Lab Architecture
 
-The Test Lab A/B Testing and Feature Flagging Platform consists of four key components:
+The Test Lab A/B Testing and Feature Management Platform consists of four key components:
 
 1. A Node.js with Express [backend server](/docs/backend-server) that exposes API endpoints for creating, editing, and deleting features, retrieving feature configurations, and collecting and retrieving feature data
 2. An [Admin User Interface (Admin UI)](/docs/admin-ui) built with React that facilitates creating, editing, deleting, and viewing current, scheduled, and past features as well as viewing experiment data and results
