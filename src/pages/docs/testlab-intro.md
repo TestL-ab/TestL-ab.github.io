@@ -27,4 +27,4 @@ We think that Test Lab is a great choice for small to mid-sized companies that h
 
 **That's where Test Lab comes in.**
 
-> The rest of this case study will walk you through the Test Lab architecture and and an exploration of the engineering decisions that we addressed while building the Test Lab application.
+> The rest of this case study will walk you through the Test Lab architecture and the engineering decisions that we made while building the Test Lab application.
