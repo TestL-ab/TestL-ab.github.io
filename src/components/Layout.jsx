@@ -101,7 +101,7 @@ const navigation = [
     title: 'Documentation',
     links: [
       { title: 'Installation', href: '/docs/installation' },
-      { title: 'Admin UI', href: '/docs/ui-docs' },
+      { title: 'Admin UI Documentation', href: '/docs/ui-docs' },
       { title: 'API Documentation', href: '/docs/api-docs' },
       { title: 'SDK Documentation', href: '/docs/sdk-docs' },
       { title: 'References', href: '/docs/references' },
