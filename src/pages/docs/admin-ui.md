@@ -3,7 +3,9 @@ title: Admin UI
 description: A walkthrough of the functionality of the Test Lab Admin UI.
 ---
 
-The Admin UI is a CRUD app for interacting with current, upcoming, and past features. In addition, you can view experiment data and results in the data visualizer. Information on how to use the Admin UI can be found in the [Admin UI Documentation](/docs/ui-docs)
+The Admin UI is a CRUD app for interacting with current, upcoming, and past features. In addition, you can view experiment data and results in the data visualizer.
+
+> Information on how to use the Admin UI can be found in the [Admin UI Documentation](/docs/ui-docs)
 
 ---
 
