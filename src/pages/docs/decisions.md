@@ -29,7 +29,7 @@ Ultimately, we chose to use PostgreSQL to store data for the Test Lab A/B testin
 
 ## API Access
 
-When designing our Test Lab backend server, we had to determine whether we wanted to force users to interact with the API solely through the Admin UI or whether we also wanted to provide direct API access as well. Keeping with our theme of **flexibility**, we decided to offer direct API access in addition to our Admin UI.
+When designing our Test Lab backend server, we had to determine whether we wanted to force users to interact with the API solely through the Admin UI or whether we also wanted to provide direct API access as well. Keeping with our theme of **flexibility**, we decided to offer direct API access in addition to our Admin UI. By allowing a programmatic access to the API, a user could automate certain activities, such as toggling off a feature in response to a particular error rate.
 
 A downside of this choice is that we do not yet have all of the validation built into the backend server that we have in the Admin UI. We do enforce that the format of created and updated features, variants, users, and events are correct whether the action came from the Admin UI or direct API access. However, there is a key validation feature present in the Admin UI that does not currently carry over to the backend server - ensuring that no more than 100% of the user base is enrolled in an experiment over a given time period.
 

@@ -13,7 +13,7 @@ Test Lab provides **feature management** infrastructure for the creation of feat
 
 **Toggles** and **Rollouts** are features that are active or inactive for **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
 
-Test Lab also allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior.
+Test Lab allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior.
 
 Test Lab is Dockerized and can be deployed on your virtual private server or AWS Elastic Container Service with one simple command.
 
