@@ -8,7 +8,7 @@ Learn more about Test Lab and how it can help you make better design decisions t
 
 {% quick-links %}
 
-{% quick-link title="Installation" icon="installation" href="/docs/installation" description="Step-by-step guide to setting up our self-hosted platform on your local host, virtual private server, or AWS Elastic Container Service." /%}
+{% quick-link title="Installation" icon="installation" href="/docs/installation" description="Step-by-step guide to setting up our self-hosted platform on your virtual private server or AWS Elastic Container Service." /%}
 
 {% quick-link title="Architecture guide" icon="presets" href="/docs/architecture" description="Learn about the key features, designity, and components of Test Lab" /%}
 
@@ -28,11 +28,10 @@ Learn more about Test Lab and how it can help you make better design decisions t
 
 > **Test Lab is an open-source, self-hosted feature management and A/B testing platform.**
 
-Test Lab provides **feature management** infrastructure for the creation of feature toggles, rollouts, and experiments. Test Lab also includes **native SDKs** to evaluate features and allow rendering of distinct variants.
+Test Lab provides **feature management** infrastructure for the creation of feature toggles, rollouts, and experiments.
 
-**Toggles** and **Rollouts** are features that are active or inactive for **all** users of an application or a specified **percentage** of users, respectively. **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
-
-Test Lab allows for **event capture** and analytics to visualize the outcome of experiments. The visualizer can help to determine whether the specified variation resulted in changes in user behavior.
+- **Toggles** and **Rollouts** are features that are active or inactive for **all** users of an application or a specified **percentage** of users, respectively.
+- **Experiment** features include two or more **variants**, and each user enrolled in an experiment is presented with one version of an application depending on the variant assigned.
 
 The Test Lab A/B Testing and Feature Flagging Platform consists of:
 
@@ -49,4 +48,4 @@ This case study explores key decisions made when designing and implementing the 
 
 * Design decisions relating to the [consistency](/docs/functional-decisions#consistency-of-the-user-experience) of the user experience, limiting users to one concurrent experiment with [user-blocks](/docs/functional-decisions#limiting-users-to-one-concurrent-experiment), the [granularity](/docs/functional-decisions#granularity-of-user-blocks) of user-blocks, and using [polling](/docs/functional-decisions#polling-to-retrieve-updated-feature-data) to retrieve updated feature data
 
-Test Lab includes a full [test suite](/docs/testing) on its backend server as well as documentation on [installation](/docs/installation), [APIs](/docs/api-docs), and [SDKs](/docs/sdk-docs).
+Test Lab includes a full [test suite](/docs/testing) on its backend server as well as documentation on [installation](/docs/installation), the [Admin UI](/docs/ui-docs), [API endpoints](/docs/api-docs), and [SDKs](/docs/sdk-docs).
