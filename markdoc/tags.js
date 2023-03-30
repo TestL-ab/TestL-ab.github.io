@@ -19,7 +19,7 @@ const people = [
     name: 'Sarah Bunker',
     email: 'sarah.bunker14@gmail.com',
     imageUrl: '/images/sarah.jpeg',
-    web: 'sarahnbunker.com',
+    web: 'sarahnbunker.net',
   },
   {
     name: 'Abbie Papka',
