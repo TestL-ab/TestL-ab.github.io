@@ -3,7 +3,7 @@ title: Architecture Overview
 description: A high-level description of the Test Lab system design
 ---
 
-Test Lab is loosely modeled on the Unleash A/B testing platform, offering users a flexible, self-hosted, open-source option for A/B testing while also adding the ability to collect, retrieve, and analyze event data originating from experiments. Test Lab is Dockerized and can be deployed on your localhost, virtual private server, or AWS Elastic Container Service with one simple command.
+Test Lab is loosely modeled on the Unleash A/B testing platform, offering users a flexible, self-hosted, open-source option for A/B testing while also adding the ability to collect, retrieve, and analyze event data originating from experiments.
 
 ---
 
@@ -17,3 +17,5 @@ The Test Lab A/B Testing and Feature Management Platform consists of four key co
 4. Native [SDKs](/docs/sdk) for Node.js, React, Ruby, and Python for communicating directly with the Test Lab API and allocating individual requests to the appropriate feature(s)
 
 ![Alt Text](/images/Architecture.png)
+
+Test Lab is Dockerized and can be deployed on your virtual private server or AWS Elastic Container Service with one simple command.
