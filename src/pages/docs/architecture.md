@@ -18,4 +18,4 @@ The Test Lab A/B Testing and Feature Management Platform consists of four key co
 
 ![Alt Text](/images/Architecture.png)
 
-Test Lab is Dockerized and can be deployed on your virtual private server or AWS Elastic Container Service with one simple command.
+Test Lab is Dockerized and can be [deployed](/docs/installation) on your virtual private server or AWS Elastic Container Service with one simple command.
