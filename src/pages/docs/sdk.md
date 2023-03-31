@@ -23,7 +23,7 @@ The first time that the SDK client fetches feature configurations, it makes a re
 
 Once the initial fetch is complete, the SDK client sends subsequent requests at the specified intervals with a `If-Modified-Since` header. The Test Lab backend server keeps track of the last time feature data was modified, and it simply returns a `304 Not Modified` status if no changes have been made since the last request. If changes have been made, then the updated feature configuration data is returned, and the in-memory representation of the feature configuration is updated by the SDK.
 
-![Alt Text](/images/Polling-dark.png)
+![Alt Text](/images/PollingUpdateReverse.png)
 
 ---
 
@@ -88,5 +88,7 @@ Overall, the process that a Test Lab SDK uses to determine the value of an exper
 ![Alt Text](/images/experimentFlow-updated.png)
 
 Variants that are returned by the Test Lab SDK include both a `value` and an `id` property. The `value` property is used by the developer to render the correct version of the feature for a user, and the `id` property is used (in conjunction with the `user_id`) to send event data to the Test Lab backend server for collection, analysis, and visualization in the Admin UI.
+
+![Alt Text](/images/exampleVariantRender.png)
 
 ---
