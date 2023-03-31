@@ -21,6 +21,8 @@ Although this limits the complexity of experiments that can be performed, we bel
 
 We will walk through the logic of **user-blocks** in more detail when we discuss [the SDKs](/docs/sdk#user-blocks) and how they determine which variant to render.
 
+![Alt Text](/images/DynamicUserBlocksByDate.gif)
+
 ---
 
 ## Validation checks
@@ -35,11 +37,15 @@ Our Admin UI also requires that all experiments have at least two variants, exac
 
 In the event that an experiment was created in error, the Admin UI restricts users to three options: deleting the experiment, changing the experiment to a rollout which enrolls the same percentage of users that our client allocated to the database, or changing the experiment to a toggle, which enrolls all users.
 
+![Alt Text](/images/VariantForm.png)
+
 ## Pausing and resuming features
 
 Test Lab recognizes that bugs can be discovered as new features are deployed, making it necessary roll back the feature until the bug has been patched. Additionally, while experiments are running, unanticipated circumstances can cause changes in user behavior in ways that are unrelated to variants being tested. For example, a competitor could be having a large sale that might temporarily alter the demographics of the users visiting your site, which would mean the data collected from that period of time might not be representative of typical user behavior.
 
 Test Lab has accounted for these circumstances. Rather than requiring our clients to terminate a feature only to recreate it after the issue has been resolved, a our Admin UI includes the ability to pause and resume features with the click of a button.
+
+![Alt Text](/images/PauseResumeFeatures.gif)
 
 ## Editing features while maintaining experiment integrity
 
@@ -60,3 +66,5 @@ Users still have the flexibility to alter the name, description, end date and th
 ## Viewing results
 
 Finally, for current and past experiments, our Admin UI allows our clients to view in-progress and final results collected from their experiments. This data visualization helps illuminate the differences in user behavior between variants and guides our clients towards making informed decisions when experiments conclude.
+
+![Visualizer](/images/RyanVisualizer.gif)

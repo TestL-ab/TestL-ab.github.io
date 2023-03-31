@@ -69,4 +69,4 @@ To edit variant details for experiments, once inside the edit modal for the rele
 
 To view results from past experiments, or in-progress data for current experiments, navigate to the experiment that you wish to view, click on the **View Experiment Details** button, and then the **View Analytics** button. This will display a raw event data graph, a normalized event data graph, and a timeline chart of events displayed by date.
 
-![Visualizer](/images/Visualizer.gif)
+![Visualizer](/images/RyanVisualizer.gif)
