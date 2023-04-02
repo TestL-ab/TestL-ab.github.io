@@ -5,7 +5,7 @@ description: A snapshot of the current A/B Testing landscape.
 
 ---
 
-## A/B Testing Landscape
+## A/B Testing Options
 
 Existing solutions for A/B testing run the gamut. There are bare-bones apps exposing APIs for creating and retrieving experiments from the command line. In addition, there are many What You See Is What You Get (WYSIWYG) options for performing A/B testing on client-side-rendered applications that can be used with limited developer expertise (e.g., VWO). At the other end of the spectrum are full featured A/B testing solutions that offer exposed APIs as well as SDKs for both server-side and client-side rendered applications that require significant developer expertise.
 
