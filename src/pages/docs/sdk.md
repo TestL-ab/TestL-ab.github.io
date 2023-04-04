@@ -53,17 +53,17 @@ In other words, for a rollout percentage of 10%, the rollout would return `true`
 
 It would be valid to question why we chose to hash the concatenated string of the `user_id` and the feature `name` instead of just hashing the `user_id`.
 
-We made the choice to hash the concatenated string because, in contrast to the experiment feature type described below, there is no constraint on the number of feature toggles that a user can be exposed to. However, we do want to make sure that users are uniformly distributed amongst active feature toggles.
+We made the choice to hash the concatenated string because, in contrast to the experiment feature type described below, there is no constraint on the number of rollouts that a user can be exposed to. However, we do want to make sure that users are uniformly distributed amongst active rollouts.
 
-Let’s suppose that we have three active feature toggles:
+Let’s suppose that we have three active rollouts:
 
-1. Toggle 1 is active for 10% of users
-2. Toggle 2 is active for 20% of users
-3. Toggle 3 is active for 30% of users
+1. Rollout 1 is active for 10% of users
+2. Rollout 2 is active for 20% of users
+3. Rollout 3 is active for 30% of users
 
-Let’s also suppose that we have a `user_id` that hashes to a value of 0.06. If we just used this value to determine toggle activity, all three toggles would be active for this user, as 0.06 is less than 0.10, 0.20, and 0.30! In contrast, a user with a `user_id` that hashes to a value of 0.35 would have no active toggles.
+Let’s also suppose that we have a `user_id` that hashes to a value of 0.06. If we just used this value to determine rollout activity, all three rollouts would be active for this user, as 0.06 is less than 0.10, 0.20, and 0.30! In contrast, a user with a `user_id` that hashes to a value of 0.35 would have no active rollouts.
 
-By hashing the `user_id` concatenated to the feature `name` we ensure that the hashed value for an individual user is different for each toggle, resulting in a more uniform distribution of feature toggles across the user base.
+By hashing the `user_id` concatenated to the rollout `name` we ensure that the hashed value for an individual user is different for each rollout, resulting in a more uniform distribution of rollouts across the user base.
 
 ---
 
