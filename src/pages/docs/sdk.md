@@ -43,15 +43,15 @@ In order to evaluate a feature, the SDK considers several attributes of a featur
 
 When evaluating whether a feature toggle is active for a particular user, the SDK checks whether the current date is within the start and end date for a particular toggle and whether the toggle is currently active (i.e., not paused). If both of these are true, then the SDK returns `true` for this feature.
 
-For a rollout, the same initial checks on the date range and the active status of the rollout are performed. If either is false, then the SDK returns `false` for the feature. If both are true, then the SDK uses a **hashing function** to hash the **concatenated string of the `user_id` and the feature `name`** into a **value between 0 and 1**. If this value is less than or equal to the rollout percentage expressed as a decimal value, then the SDK returns `true` for this feature.
+For a rollout, the same initial checks on the date range and the active status of the rollout are performed. If either is false, then the SDK returns `false` for the feature. If both are true, then the SDK uses a **hashing function** to hash the **concatenated string of the `user_id` and the rollout `name`** into a **value between 0 and 1**. If this value is less than or equal to the rollout percentage expressed as a decimal value, then the SDK returns `true` for this feature.
 
-In other words, for a rollout percentage of 10%, the rollout would return `true` for a user if the hashed value of the `user_id` concatenated to the feature `name` is less than or equal to 0.10.
+In other words, for a rollout percentage of 10%, the rollout would return `true` for a user if the hashed value of the `user_id` concatenated to the rollout `name` is less than or equal to 0.10.
 
 ![Alt Text](/images/toggleAndRollout-updated.png)
 
 ### Why hash the concatenated string?
 
-It would be valid to question why we chose to hash the concatenated string of the `user_id` and the feature `name` instead of just hashing the `user_id`.
+It would be valid to question why we chose to hash the concatenated string of the `user_id` and the rollout `name` instead of just hashing the `user_id`.
 
 We made the choice to hash the concatenated string because, in contrast to the experiment feature type described below, there is no constraint on the number of rollouts that a user can be exposed to. However, we do want to make sure that users are uniformly distributed amongst active rollouts.
 
