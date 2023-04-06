@@ -19,7 +19,19 @@ There are a number of approaches that companies can take when trying to optimize
 
 4. **Analytics**: Analytics tools can be used to track user behavior and identify areas of the website or campaign that are performing well or poorly. This data can be used to make data-driven decisions and optimize the design or content.
 
-5. **A/B testing**: A/B testing involves randomly dividing a sample population into two or more groups and exposing each group to a different version of the website or campaign. The results are then analyzed to determine which version performed better in achieving the desired outcome. The goal is to identify which version has a higher conversion rate.
+5. **A/B testing**: As we will discuss more below, A/B testing involves randomly dividing a sample population into two or more groups and exposing each group to a different version of the website or campaign. The results are then analyzed to determine which version performed better in achieving the desired outcome. The goal is to identify which version has a higher conversion rate.
+
+## Hypotheses, experiments, and results
+
+**A/B testing** (also called split testing) is a tool that is used to compare the way users engage with two or more distinct versions of a website. Those versions may have visible differences in the user interface, or there may be differences in hardware, software, or APIs that may not be visible to the user but could otherwise affect the user experience.
+
+Prior to conducting an A/B test, a company will create a **hypothesis** about how a modification is expected to impact a specific user behavior. Next, a **variant** of the original site is created that features the proposed
+change, and an A/B test tool is used to direct a certain percentage of users to the variant and a certain
+percentage to the control.
+
+![Alt Text](/images/ab_testing_overview.png)
+
+Once users are assigned to a test variant, event data related to the desired user behavior can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling distinct groups of users to interact with each version and using data analysis to compare their responses with the proposed goal, companies can make an informed decision as to whether to roll out the change to the whole user base.
 
 ## A/B testing is an attractive solution for optimizing conversion rate
 

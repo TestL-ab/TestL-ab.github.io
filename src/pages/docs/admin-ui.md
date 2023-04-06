@@ -11,13 +11,13 @@ The Admin UI is a basic CRUD application that manages feature configuration and 
 
 ## User-block introduction
 
-One key aspect of ensuring that we provide useful experiment data is accurately reflecting whether a change in user behavior is the result of a single variant being tested, versus some combination of variants from concurrently running experiments.
+One key aspect of ensuring that we provide useful experiment data is accurately reflecting whether a change in user behavior is the result of a single variant being tested, versus some combination of variants from concurrently running experiments. Test Lab clients may have smaller pools of potential users and, therefore, a lower likelihood of achieving statistically significant results with multivariate tests.
 
-Rather than allowing multivariate experiments, where users can be exposed to more than one variant at a time, we developed a **user-block** strategy where the available pool of users is segmented into 20 chunks, each representing 5% of the user base. Each of these chunks, or **user-blocks**, is permanently allocated for the duration of the experiment, ensuring that the **user-block** is only exposed to one experiment at a time.
+Thereafore, rather than allowing multivariate experiments, where users can be exposed to more than one variant at a time, we developed a **user-block** strategy where the available pool of users is segmented into 20 chunks, each representing 5% of the user base. Each of these chunks, or **user-blocks**, is permanently allocated for the duration of the experiment, ensuring that the **user-block** is only exposed to one experiment at a time.
 
 In order to ensure that the percentage of users to be enrolled in a new experiment does not exceed the number of **user-blocks** available for the selected date range, the Admin UI dynamically populates the maximum percentage of users that are available during the entire specified date range, based on existing experiments scheduled during that period.
 
-Although this limits the complexity of experiments that can be performed, we believe that it is better suited to Test Lab clients, who may have smaller pools of potential users and, therefore, a lower likelihood of achieving statistically significant results with multivariate tests.
+Although this limits the complexity of experiments that can be performed, we believe that it is better suited to the lower-volume needs of Test Lab clients.
 
 We will walk through the logic of **user-blocks** in more detail when we discuss [the SDKs](/docs/sdk#user-blocks) and how they determine which variant to render.
 
@@ -49,7 +49,7 @@ Test Lab has accounted for these circumstances. Rather than requiring our client
 
 ## Editing features while maintaining experiment integrity
 
-Additionally, the Test Lab application ensures that once experiments are created, future edits will not be detrimental. We have tailored our feature editing options to ensure maximum flexibility when editing **upcoming** features, including the ability to modify names, descriptions, start dates, end dates, and user enrollment percentages, where relevant, as well as the quantity and weight of variants for experiments.
+We have tailored our feature editing options to ensure maximum flexibility when editing **upcoming** features, including the ability to modify names, descriptions, start dates, end dates, and user enrollment percentages, where relevant, as well as the quantity and weight of variants for experiments.
 
 ![Alt Text](/images/EditingUpcomingFeatures.png)
 

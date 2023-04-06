@@ -15,18 +15,6 @@ In established applications, even the smallest changes can have a significant im
 blue for ad links](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers), resulting in a final color choice that added nearly $200M in revenue. As you will see in the upcoming discussion, A/B testing allows companies to make informed decisions about features, design choices, or even hardware based on quantitative data points and
 analytics. Changes to the application based on these decisions can increase desired user behavior and may help identify more efficient or cost-effective solutions. A/B testing prior to rollout also reduces the risk of making a detrimental design choice based on perceived aesthetic preference of a designer, developer, or executive rather than actual user behavior.
 
-## Hypotheses, experiments, and results
-
-**A/B testing** (also called split testing) is a tool that is used to compare the way users engage with two or more distinct versions of a website. Those versions may have visible differences in the user interface, or there may be differences in hardware, software, or APIs that may not be visible to the user but could otherwise affect the user experience.
-
-Prior to conducting an A/B test, a company will create a **hypothesis** about how a modification is expected to impact a specific user behavior. Next, a **variant** of the original site is created that features the proposed
-change, and an A/B test tool is used to direct a certain percentage of users to the variant and a certain
-percentage to the control.
-
-![Alt Text](/images/ab_testing_overview.png)
-
-Once users are assigned to a test variant, event data related to the desired user behavior can be gathered and analyzed from users in each group. The user behavior from each version is compared to determine whether the hypothesis was accurate. By enabling distinct groups of users to interact with each version and using data analysis to compare their responses with the proposed goal, companies can make an informed decision as to whether to roll out the change to the whole user base.
-
 ---
 
 ## Use Cases for A/B Testing

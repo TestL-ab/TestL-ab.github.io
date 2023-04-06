@@ -24,7 +24,7 @@ Test Lab is Dockerized and can be deployed on your virtual private server or AWS
 
 As you saw in the previous sections, there are a range of A/B testing and feature management platforms available, so **where does Test Lab fit in**?
 
-We think that Test Lab is a great choice for small to mid-sized companies that have at least one developer on their team. These companies might be reluctant to give other providers access to their data and would prefer a self-hosted solution, and they may be looking for easy deployment to their virtual private servers. This company may be experiencing enough growth to be interested in making data-driven decisions, but they are not yet collecting their own event data. In essence, they are looking for **flexibility**, but they do not have the resources to build their own A/B testing solution from scratch.
+We think that Test Lab is a great choice for small to mid-sized companies that have at least one developer on their team and are looking for the flexibility to implement either client-side or server-side A/B testing. These companies might be reluctant to give other providers access to their data and would prefer a self-hosted solution, and they may be looking for easy deployment to their virtual private servers. This company may be experiencing enough growth to be interested in making data-driven decisions, but they are not yet collecting their own event data. In essence, they are looking for **flexibility**, but they do not have the resources to build their own A/B testing solution from scratch.
 
 **That's where Test Lab comes in.**
 
