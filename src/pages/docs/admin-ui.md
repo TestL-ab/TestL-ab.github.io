@@ -3,7 +3,7 @@ title: Admin UI
 description: A walkthrough of the functionality of the Test Lab Admin UI.
 ---
 
-The Admin UI is a basic CRUD application that manages feature configuration and event data visualization. In addition to serving as a user-friendly interface for managing features, the Admin UI has been specially designed to support our clients in creating successful experiments that will yield valid, useful data.
+The Admin UI is a basic CRUD application that manages feature configuration and event data visualization. In addition to serving as a user-friendly interface for managing features, the Admin UI has been specially designed to support the creation of successful experiments that will yield valid, useful data.
 
 > Information on how to use the Admin UI can be found in the [Admin UI Documentation](/docs/ui-docs)
 

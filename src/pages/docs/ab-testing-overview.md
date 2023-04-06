@@ -3,6 +3,8 @@ title: A/B Testing Landscape
 description: An overview of A/B testing and use cases, and implementation options.
 ---
 
+Due to the key advantages discussed in the previous section, our solution - Test Lab - takes the A/B testing approach to optimizing applications. In this section, we will walk through a more detailed introduction to A/B testing, its key use cases, and implementation options.
+
 ---
 
 ## Small changes can have a big impact
@@ -10,14 +12,14 @@ description: An overview of A/B testing and use cases, and implementation option
 In established applications, even the smallest changes can have a significant impact that may not be predictable or obvious. Presenting an application change to a “test” audience of users and observing their behavior can add empirical data to the process of making improvements. This can increase conversion rates or alter desired user behavior.
 
 [Google famously tested over 40 different shades of
-blue for ad links](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers), resulting in a final color choice that added nearly $200M in revenue. A/B testing allows companies to make informed decisions based on quantitative data points and
-analytics. These decisions can increase desired user behavior and may help identify more efficient or cost-effective solutions. A/B testing prior to rollout also reduces the risk of making a detrimental design choice based on perceived aesthetic preference of a designer, developer, or executive rather than actual user behavior.
+blue for ad links](https://www.theguardian.com/technology/2014/feb/05/why-google-engineers-designers), resulting in a final color choice that added nearly $200M in revenue. As you will see in the upcoming discussion, A/B testing allows companies to make informed decisions about features, design choices, or even hardware based on quantitative data points and
+analytics. Changes to the application based on these decisions can increase desired user behavior and may help identify more efficient or cost-effective solutions. A/B testing prior to rollout also reduces the risk of making a detrimental design choice based on perceived aesthetic preference of a designer, developer, or executive rather than actual user behavior.
 
 ## Hypotheses, experiments, and results
 
 **A/B testing** (also called split testing) is a tool that is used to compare the way users engage with two or more distinct versions of a website. Those versions may have visible differences in the user interface, or there may be differences in hardware, software, or APIs that may not be visible to the user but could otherwise affect the user experience.
 
-Prior to conducting an A/B test, a company will create a **hypothesis** about how a modification is expected to impact a specific user behavior. Next, a **variation** of the original site is created that features the proposed
+Prior to conducting an A/B test, a company will create a **hypothesis** about how a modification is expected to impact a specific user behavior. Next, a **variant** of the original site is created that features the proposed
 change, and an A/B test tool is used to direct a certain percentage of users to the variant and a certain
 percentage to the control.
 
@@ -29,7 +31,7 @@ Once users are assigned to a test variant, event data related to the desired use
 
 ## Use Cases for A/B Testing
 
-Use cases for A/B testing can include design changes, feature experimentation, changes to hardware or backend software, and testing of third-party APIs and services.
+Although A/B testing is most commonly used to test visual elements of a website or application, it can aid in a much wider range of decisions. Use cases for A/B testing can include not only design changes but also feature experimentation, changes to hardware or backend software, and testing of third-party APIs and services.
 
 ### UI and Design Changes
 
@@ -53,23 +55,51 @@ When considering third-party services, there may be many different options with 
 
 ## Implementing A/B Testing
 
-A/B tests can be implemented on the client-side, server-side, or CDN level of an application.
+As A/B testing becomes more popular as a way to improve a website or application, it is important to consider the different ways in which tests can be implemented. Depending on the application, A/B tests can be implemented on the client-side, server-side, or CDN level, each of which offers unique advantages and challenges.
 
 ### Client-Side Implementation
 
-A/B tests are most commonly implemented on the client-side, and these types of tests typically rely on third-party services. The web server always sends the same version of the page, but users are assigned to test and control groups, and the DOM is modified for the test group using JavaScript. Since the variation happens in the browser rather than the server, it is called client-side implementation.
+In a client-side implementation of A/B testing, the web server always sends the same version of the page to all users. However, when a user is assigned to the test group, the DOM (Document Object Model) is modified using JavaScript to display the test version of the page. This process typically involves the following steps:
 
-A key advantage of client-side implementation is that it’s easy for developers, as there are many existing third-party services (for example, Google Optimize, Optimizely, and VWO) to support this type of implementation. There is no inherent need to build a testing platform from scratch, and many of these tools can be used with limited developer expertise. In fact, VWO goes so far as to state that, ["...ideally, we want our users never to touch any code (be it HTML, JavaScript, CSS, or PHP)...VWO is suited for people who don't want to rely on developers or \[the\] IT team for doing even the simplest kind of testing."](https://cxl.com/blog/server-side-vs-client-side-ab-testing-tools-whats-the-difference/#h-client-side-server-side-what-s-the-difference)
+1. The user's browser loads the page and executes the JavaScript code that has been added to the page for the purpose of A/B testing.
 
-On the downside, A/B tests with client-side rendered applications can cause a strange user experience, as you have to re-render the page for the test group after having the original page flash briefly on their screen. Client-side implementation can also have an undesirable impact on sites that utilize React, Angular, and other libraries and frameworks, as the DOM will not match the virtual DOM for those who are part of the test group.
+2. The JavaScript code checks whether the user has been assigned to the test group or the control group. This information is typically stored in a cookie or in the URL parameters.
+
+3. If the user has been assigned to the test group, the JavaScript code modifies the DOM to display the test version of the page. This could involve changing the layout, the color scheme, the wording, or any other element of the page that is being tested.
+
+4. The user sees the modified version of the page and interacts with it in the usual way.
+
+By modifying the DOM using JavaScript, A/B testing can be carried out without making any changes to the web server or the backend code. This makes it a convenient and flexible way to test different versions of a webpage or app.
+
+A key advantage of client-side implementation is that it’s easy for developers, as there are many existing third-party services (for example, Google Optimize, Optimizely, and VWO) to support this type of implementation. There is no inherent need to build a testing platform from scratch, and many of these tools can be used with limited developer expertise. In fact, VWO goes so far as to state that,
+
+> ["...ideally, we want our users never to touch any code (be it HTML, JavaScript, CSS, or PHP)...VWO is suited for people who don't want to rely on developers or \[the\] IT team for doing even the simplest kind of testing."](https://cxl.com/blog/server-side-vs-client-side-ab-testing-tools-whats-the-difference/#h-client-side-server-side-what-s-the-difference)
+
+On the downside, A/B tests with client-side rendered applications can cause a strange user experience, as you have to re-render the page for the test group after having the original page flash briefly on their screen.
+
+Client-side implementation can also have an undesirable impact on sites that utilize React, Angular, and other libraries and frameworks, as the DOM will not match the virtual DOM for those who are part of the test group. When the virtual DOM and the real DOM become out of sync for the users in the test group, this can cause unexpected behavior, errors, or bugs that do not accurately reflect the performance of the original web application.
+
+For example, suppose a React-based website is being A/B tested, and a change is made to the DOM for the test group using JavaScript. The virtual DOM and the real DOM for the test group will not match, which can lead to unpredictable behavior such as incorrect component rendering or unresponsive user interactions. This can result in inaccurate test results, and can also negatively impact the user experience for those in the test group.
 
 ### Server-Side Implementation
 
 Server-side A/B testing is performed on the server-side, which means that it happens before the page is served to the user. Server-side A/B testing can be used to test any aspect of a website or application that is controlled by the server, including content, layout, and functionality.
 
-One advantage of this approach is that the server has full access to user data, so you are able to select specific users for testing, based on criteria you determine to be relevant. In addition, many back-end testing platforms tend to be custom-built, so there is more control over implementation and the option of more robust privacy and security measures.
+One advantage of this approach is that the server has full access to user data, so you are better able to select specific users for testing, based on criteria you determine to be relevant. Client-side A/B testing generally only has access to data that is available in the user's browser, such as cookies or local storage. However, server-side A/B testing is done on the web server, which has access to a much wider range of user data, including the user's IP address, session data, and other information that is not generally available in the browser. This additional data can be used to provide more detailed and accurate analysis of user behavior and performance metrics.
 
-On the other hand, there are fewer third-party options for implementing server-side A/B testing, so more developer expertise is required. Peter Koomen, co-founder of Optimizely [summarized this key trade-off of client- versus server-side A/B testing](https://cxl.com/blog/server-side-vs-client-side-ab-testing-tools-whats-the-difference/#h-client-side-server-side-what-s-the-difference):
+Server-side A/B testing platforms tend to be custom-built rather than provided by third parties for several reasons:
+
+1. Customization: Server-side A/B testing often requires customization to fit the specific needs of the application or website. Custom-built platforms can be tailored to the specific requirements of the business and can be designed to integrate with existing systems and infrastructure.
+
+2. Control: Custom-built A/B testing platforms provide more control over the testing process, including the ability to adjust testing parameters, add or remove tests, and modify the underlying code.
+
+3. Security: Server-side A/B testing involves sensitive data and code that is executed on the server. Custom-built platforms can be designed with security in mind and can be audited and tested to ensure that they meet the highest security standards.
+
+4. Scale: Large-scale A/B testing can involve processing massive amounts of data and traffic. Custom-built platforms can be optimized for performance and scalability to handle large volumes of traffic and provide real-time results.
+
+5. Cost: Third-party A/B testing platforms may come with additional costs, such as subscription fees or transaction fees. Custom-built platforms can provide cost savings over the long term, especially if the business has specific requirements or needs that are not met by third-party solutions.
+
+Since there are fewer third-party options for implementing server-side A/B testing, more developer expertise is required. Peter Koomen, co-founder of Optimizely [summarized this key trade-off of client- versus server-side A/B testing](https://cxl.com/blog/server-side-vs-client-side-ab-testing-tools-whats-the-difference/#h-client-side-server-side-what-s-the-difference):
 
 > "The advantage of testing on the client side is speed and simplicity. You can test a lot of changes quickly without much initial investment. On the other hand, testing on the server side is both more work and generally more powerful."
 
@@ -79,4 +109,8 @@ A/B testing can also be implemented via a CDN, where the CDN randomly assigns us
 
 Since you have entirely separate branches of code for your existing version and your test version(s), it is easier to fully switch the entire user base to the successful version after the experiment is complete. This approach is ideal for static sites that are already hosted on a CDN, as many CDNs already offer this service. In addition, since users are sent directly to one site or the other, you don’t have the potential “flash” of the original site for users in the test group.
 
-However, CDN A/B testing is limited to testing content that can be served by the CDN, which may not include all elements of a web page. This can limit the scope of testing and make it more difficult to identify the most effective changes.
+However, one limitation of CDN A/B testing is that it can only test content that can be served by the CDN. This typically includes static content such as images, CSS files, and JavaScript files, but may not include dynamic content generated by the server, such as user-specific data or personalized content. This can limit the scope of testing and make it more difficult to identify the most effective changes.
+
+Another limitation of CDN A/B testing is that it may not provide accurate results for users who are located far away from the edge servers, as the latency and network conditions may vary widely depending on the user's location. Additionally, CDN A/B testing may not be suitable for testing certain types of content or functionality, such as e-commerce transactions or user authentication, which may require more advanced testing methods.
+
+In summary, while CDN A/B testing can provide some benefits, such as improved website performance and reduced latency, it is limited in scope and may not be suitable for all types of content or functionality.
