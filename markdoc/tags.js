@@ -12,7 +12,7 @@ const people = [
   {
     name: 'Chelsea Saunders',
     email: 'c.c.saunders@protonmail.com',
-    imageUrl: '/images/chelsea.png',
+    imageUrl: '/images/chelsea_profile.jpeg',
     web: '',
   },
   {
