@@ -12,8 +12,8 @@ const people = [
   {
     name: 'Chelsea Saunders',
     email: 'c.c.saunders@protonmail.com',
-    imageUrl: '/images/chelsea_profile.jpeg',
-    web: '',
+    imageUrl: '/images/chelsea_profile_2.jpeg',
+    web: 'chelseasaunders.dev',
   },
   {
     name: 'Sarah Bunker',
